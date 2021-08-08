@@ -3,5 +3,5 @@ import { getStarsRankingUrl } from '../logics/getStarsRanking'
 </script>
 
 <template>
-  <a :href="getStarsRankingUrl()" target="_blank">All projects sort by Stars</a>
+  <a :href="getStarsRankingUrl()" target="_blank">All projects sorted by Stars</a>
 </template>

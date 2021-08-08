@@ -2,11 +2,19 @@
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useEventListener, isClient } from '@vueuse/core'
+import { useHead } from '@vueuse/head'
 
 import { formatDate } from '/~/logics'
 
 const route = useRoute()
 const { frontmatter } = defineProps<{ frontmatter: any }>()
+
+useHead({
+  meta: [
+    { name: 'keywords', content: frontmatter.keywords },
+  ],
+})
+
 
 if (isClient) {
   const navigate = () => {

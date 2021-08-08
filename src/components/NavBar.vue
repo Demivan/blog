@@ -22,12 +22,14 @@ import { isDark } from '/~/logics'
           <span class="<md:hidden">Projects</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
+        <!--
         <router-link to="/notes" title="Notes">
           <ri-sticky-note-line />
         </router-link>
         <a href="https://twitter.com/IvanDemchuk" target="_blank" title="Twitter">
           <feather-twitter />
         </a>
+        -->
         <a href="https://github.com/demivan" target="_blank" title="GitHub">
           <uil-github-alt />
         </a>

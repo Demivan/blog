@@ -2,6 +2,7 @@
 title: Trying to use vue-i18n in real-world application
 date: 2021-08-08T21:00:00.000+02:00
 lang: en
+duration: 5min
 keywords: vue.js, vue, js, internationalization, vue-i18n
 ---
 
@@ -14,7 +15,7 @@ In this blog post I try to explain what problems I have encountered when trying 
 Firstly, this is what I liked in `vue-i18n`:
 
 #### Component interpolation
-Allows using components inside translation messages. Nice way of reducing `v-html` directive usages.
+Component interpolation allows using components inside translation messages. Nice way of reducing `v-html` directive usages.
 
 #### SFC custom blocks
 Keeping translations for the component in the same file as template and js code is really convenient.
@@ -32,19 +33,19 @@ And this is what I didn't like in `vue-i18n` or what didn't work for our project
 
 #### "Leaky" localizations
 
-Grammar of source language limits what features translators can use and leaks into app code and translations messages  of other languages. Developers are forced to make choises that translators should make: should translation message be pluralized, what date and number format to use.
+Grammar of source language limits what features translators can use and leaks into app code and translations messages  of other languages.
 
 ***Example (pluralization):***
 
 If you want translators to be able to use pluralization, you are forced to use `$tc` method. Even if you don't need it for your source language. You cannot just write:
 ```js
-$t('copy-n-files', { count: filesCount })
-
 const messages = {
   en: {
     'copy-n-files': 'Copy {count} files'
   }
 }
+
+$t('copy-n-files', { count: filesCount })
 ```
 
 You need to use `$tc` method with additional parameter:
@@ -52,7 +53,7 @@ You need to use `$tc` method with additional parameter:
 $tc('copy-n-files', filesCount, { count: filesCount })
 ```
 
-And translators still have no way of knowing, without checking application code, if translation that uses following format would be pluralized.
+And translators still have no way of knowing, without checking application code, whether translation that uses following format would be pluralized.
 ```js
 const messages = {
   en: {
@@ -67,10 +68,6 @@ On top of that, if translator tries to use this syntax and developer did not use
   <summary>
     <em>fluent-vue solution</em>
   </summary>
- 
-```js
-$t('copy-n-files', { count: 5 })
-```
 
 ```ftl
 copy-n-files = { $count -> 
@@ -79,7 +76,63 @@ copy-n-files = { $count ->
 }
 ```
 
+```js
+$t('copy-n-files', { count: 5 })
+```
+
 This syntax can be used in any translation message to choose option based on different plural categories.
+</details>
+
+#### Translators do not have control over translations
+
+Developers are forced to make choises that translators should make: should translation message be pluralized, what date and number format to use.
+
+***Example (date format):***
+
+`vue-i18n` has a fixed number of developer-predefined date formats and developer decides what format to use in each case.
+
+```js
+const dateTimeFormats = {
+  'en': {
+    short: {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    },
+    long: {
+      ...
+    }
+  }
+}
+
+const messages = {
+  'en': {
+    'last-online': 'User was last online at {date}'
+  }
+}
+
+$t('last-online', { date: $d(new Date(), 'short') })
+```
+
+Translators cannot change date format for particular translation, for example if it does not fit into UI in some language.
+
+<details>
+  <summary>
+    <em>fluent-vue solution</em>
+  </summary>
+
+Fluent syntax allows translators to call custom function in translation messages. There is built in `DATETIME` function:
+
+```ftl
+last-online = User was last online at { DATETIME($date, year: "numeric", month: "short", month: "short") }
+```
+
+```js
+$t('last-online', { date: new Date() })
+```
+
+If you want to have predefined date formats it can easily be implemented using custom function. But translators will still be able to choose what format to use in each case.
+
 </details>
 
 #### Syntax is not powerfull enought

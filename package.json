@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "vite --port 3333 --open",
     "preview": "vite preview",
-    "build": "cross-env NODE_ENV=production vite-ssg build && esno ./scripts/rss.ts"
+    "build": "cross-env NODE_ENV=production vite-ssg build && esno ./scripts/rss.ts && esno ./scripts/sitemap.ts"
   },
   "homepage": "https://demivan.me",
   "repository": {
@@ -52,6 +52,7 @@
     "pnpm": "^6.11.5",
     "postcss-nested": "^5.0.6",
     "prismjs": "^1.24.1",
+    "sitemap": "^7.0.0",
     "typescript": "^4.3.5",
     "vite": "^2.4.4",
     "vite-plugin-components": "^0.13.2",

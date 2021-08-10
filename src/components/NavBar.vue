@@ -9,7 +9,7 @@ import { isDark } from '/~/logics'
       to="/"
       focusable="false"
     >
-      Home
+      <majesticons:home style="font-size: 1.75em;" />
     </router-link>
     <nav class="nav">
       <div class="spacer" />
@@ -26,10 +26,10 @@ import { isDark } from '/~/logics'
         <router-link to="/notes" title="Notes">
           <ri-sticky-note-line />
         </router-link>
+        -->
         <a href="https://twitter.com/IvanDemchuk" target="_blank" title="Twitter">
           <feather-twitter />
         </a>
-        -->
         <a href="https://github.com/demivan" target="_blank" title="GitHub">
           <uil-github-alt />
         </a>
@@ -45,12 +45,6 @@ import { isDark } from '/~/logics'
 <style scoped>
 .header h1 {
   margin-bottom: 0;
-}
-
-.logo {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
 }
 
 .nav {
@@ -69,7 +63,7 @@ import { isDark } from '/~/logics'
   margin-bottom: 0;
 }
 
-.nav a {
+.header a {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -78,7 +72,7 @@ import { isDark } from '/~/logics'
   outline: none;
 }
 
-.nav a:hover {
+.header a:hover {
   opacity: 1;
   text-decoration-color: inherit;
 }

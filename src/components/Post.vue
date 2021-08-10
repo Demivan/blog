@@ -15,7 +15,6 @@ useHead({
   ],
 })
 
-
 if (isClient) {
   const navigate = () => {
     if (location.hash) {

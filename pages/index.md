@@ -1,12 +1,14 @@
-## Hi 👋, I'm Ivan Demchuk
+---
+title: Ivan Demchuk
+description: Ivan Demchuk's Blog
+---
 
-I'm Tech Lead, Full-Stack Developer working in Lviv, Ukraine.
+Hi 👋, I'm Ivan Demchuk. I'm Tech Lead, Full-Stack Developer working in Lviv, Ukraine.
 
  - 🔭 I'm currently working on [fluent-vue](https://github.com/demivan/fluent-vue)
  - 🌱 I'm currently learning Rust and Kubernetes
  - 💬 Ask me about Vue, C#, Linux and Cosmere <img src="https://user-images.githubusercontent.com/2339406/126692384-17784667-7b16-434e-8b54-48b5e5ec614e.png" width="20" height="20" valign="middle" style="display: inline-block; margin: 0;">
  - 📫 How to reach me: [ivan.demchuk@gmail.com](mailto:ivan.demchuk@gmail.com) or [GitHub issues](https://github.com/Demivan/Demivan/issues)
- - 😄 Pronouns: he/him
 
 ### 🔧 Technologies & Tools
 

@@ -12,17 +12,18 @@ const DOMAIN = 'https://demivan.me'
  */
 export const getUpdatedTime = async (
   filePath: string,
-  cwd: string
-): Promise<number> => {
+  cwd: string,
+): Promise<Date | undefined> => {
   const { stdout } = await execa(
     'git',
     ['--no-pager', 'log', '-1', '--format=%at', filePath],
     {
       cwd,
-    }
+    },
   )
 
-  return Number.parseInt(stdout, 10) * 1000
+  const date = Number.parseInt(stdout, 10) * 1000
+  return Number.isNaN(date) ? undefined : new Date(date)
 }
 
 async function run() {
@@ -64,9 +65,9 @@ async function buildBlogSitemap(stream: SitemapStream) {
 
           const sitemapItem: SitemapItemLoose = {
             url: i.replace(/.md$/, '').replace(/^pages/, ''),
-            lastmodISO: new Date(await getUpdatedTime(i, '.')).toISOString(),
+            lastmodISO: (await getUpdatedTime(i, '.'))?.toISOString(),
             changefreq: 'weekly',
-            ...data
+            ...data,
           }
 
           return sitemapItem

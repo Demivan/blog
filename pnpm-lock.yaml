@@ -31,13 +31,11 @@ specifiers:
   markdown-it: ^12.1.0
   markdown-it-anchor: ^8.1.2
   markdown-it-link-attributes: ^3.0.0
-  markdown-it-prism: ^2.1.8
   markdown-it-shiki: ^0.2.3
   nprogress: ^0.2.0
   pnpm: ^6.11.5
   postcss-nested: ^5.0.6
-  prism-theme-vars: ^0.2.2
-  prismjs: ^1.24.1
+  shiki: ^0.9.6
   sitemap: ^7.0.0
   typescript: ^4.3.5
   vite: ^2.4.4
@@ -60,7 +58,6 @@ dependencies:
   '@vueuse/head': 0.6.0_vue@3.1.5
   date-fns: 2.23.0
   nprogress: 0.2.0
-  prism-theme-vars: 0.2.2
   vue: 3.1.5
   vue-router: 4.0.10_vue@3.1.5
 
@@ -91,11 +88,10 @@ devDependencies:
   markdown-it: 12.1.0
   markdown-it-anchor: 8.1.2_markdown-it@12.1.0
   markdown-it-link-attributes: 3.0.0
-  markdown-it-prism: 2.1.8
   markdown-it-shiki: 0.2.3
   pnpm: 6.11.5
   postcss-nested: 5.0.6
-  prismjs: 1.24.1
+  shiki: 0.9.6
   sitemap: 7.0.0
   typescript: 4.3.5
   vite: 2.4.4
@@ -4281,19 +4277,12 @@ packages:
     resolution: {integrity: sha512-B34ySxVeo6MuEGSPCWyIYryuXINOvngNZL87Mp7YYfKIf6DcD837+lXA8mo6EBbauKsnGz22ZH0zsbOiQRWTNg==}
     dev: true
 
-  /markdown-it-prism/2.1.8:
-    resolution: {integrity: sha512-PBiqlX3zGPQnOk7q7TkeveQfXlqzhjfHg2zSwntDNauYY7KFhg2FzO6O+1boillQptEBcIaEAO9gwKq/tXGHUQ==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      prismjs: 1.24.1
-    dev: true
-
   /markdown-it-shiki/0.2.3:
     resolution: {integrity: sha512-CvwLRlB6pvZ1VDtcpvMVwWavpkUNb9Dg+lj4dLTUB9p/5oXtk/7cDH+hQlBVHoz568HNcul4zRiX05+tpJOcAA==}
     dependencies:
       deasync: 0.1.21
       debug: 4.3.2
-      shiki: 0.9.5
+      shiki: 0.9.6
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4800,14 +4789,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /prism-theme-vars/0.2.2:
-    resolution: {integrity: sha512-EL9ifuU/F8tEldoCa2sspiiLWysCL54xDbf2gN/ubwdtbuJROqOGopG5kSwunapwaioT+jLUQ/Ky+7jnv62xJA==}
-    dev: false
-
-  /prismjs/1.24.1:
-    resolution: {integrity: sha512-mNPsedLuk90RVJioIky8ANZEwYm5w9LcvCXrxHlwf4fNVSn8jEipMybMkWUyyF0JhnC+C4VcOVSBuHRKs1L5Ow==}
-    dev: true
-
   /progress/2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
@@ -5100,8 +5081,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shiki/0.9.5:
-    resolution: {integrity: sha512-XFn+rl3wIowDjzdr5DlHoHgQphXefgUTs2bNp/bZu4WF9gTrTLnKwio3f28VjiFG6Jpip7yQn/p4mMj6OrjrtQ==}
+  /shiki/0.9.6:
+    resolution: {integrity: sha512-h2y5Uq9QEWsEmi97n+BOdPOVxkOUdVunl+jVIzU9EqJ6/QbIX+U6F7TsrWZQ2xqwPgvvQaC9r7/zeegi1b48dQ==}
     dependencies:
       json5: 2.2.0
       onigasm: 2.2.5

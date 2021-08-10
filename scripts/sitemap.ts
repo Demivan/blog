@@ -35,6 +35,11 @@ async function run() {
     changefreq: 'weekly',
   })
 
+  stream.write({
+    url: '/posts',
+    changefreq: 'daily'
+  })
+
   await buildBlogSitemap(stream)
   await buildNotesSitemap(stream)
 

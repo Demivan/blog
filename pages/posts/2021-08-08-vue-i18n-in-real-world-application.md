@@ -1,5 +1,6 @@
 ---
 title: Trying to use vue-i18n in real-world application
+description: In this blog post I explain what problems I have encountered when trying to use vue-i18n library for internationalization of my Vue.js app.
 date: 2021-08-08T21:00:00.000+02:00
 lang: en
 duration: 5min
@@ -8,7 +9,7 @@ keywords: vue.js, vue, js, internationalization, vue-i18n
 
 After months of frustration with trying to use "de-facto" internationalization library for Vue.js - `vue-i18n` (there is no way you can Google a different one), I've decided it is time to replace it. And that is why I have created [fluent-vue](https://fluent-vue.demivan.me). I will write more about it and [Fluent syntax](https://projectfluent.org/) it uses in following blog posts.
 
-In this blog post I try to explain what problems I have encountered when trying to use `vue-i18n` library in our app.
+In this blog post I try to explain what problems I have encountered when trying to use `vue-i18n` library in my app.
 
 ### vue-i18n good parts:
 
@@ -25,7 +26,7 @@ Being the most used Vue.js internationalization library it has heap of usefull p
  
 ### vue-i18n issues:
 
-And this is what I didn't like in `vue-i18n` or what didn't work for our project:
+And this is what I didn't like in `vue-i18n` or what didn't work for my project:
 
 #### Complicated API for developers
 

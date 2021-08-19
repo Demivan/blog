@@ -7,9 +7,9 @@ duration: 5min
 keywords: vue.js, vue, js, internationalization, vue-i18n
 ---
 
-After months of frustration with trying to use "de-facto" internationalization library for Vue.js - `vue-i18n` (there is no way you can Google a different one), I've decided it is time to replace it. And that is why I have created [fluent-vue](https://fluent-vue.demivan.me). I will write more about it and [Fluent syntax](https://projectfluent.org/) it uses in following blog posts.
+After months of frustration with trying to use the "de-facto" internationalization library for Vue.js - `vue-i18n` (there is no way you can Google a different one), I've decided it is time to replace it. And that is why I have created [fluent-vue](https://fluent-vue.demivan.me). I will write more about it and [Fluent syntax](https://projectfluent.org/) it uses in my following blog posts.
 
-In this blog post I try to explain what problems I have encountered when trying to use `vue-i18n` library in my app.
+In this blog post, I try to explain what problems I have encountered when trying to use the `vue-i18n` library in my app.
 
 ### vue-i18n good parts:
 
@@ -22,7 +22,7 @@ Component interpolation allows using components inside translation messages. Nic
 Keeping translations for the component in the same file as template and js code is really convenient.
 
 #### Tooling
-Being the most used Vue.js internationalization library it has heap of usefull packages and extensions.
+Being the most used Vue.js internationalization library it has a heap of useful packages and extensions.
  
 ### vue-i18n issues:
 
@@ -30,11 +30,11 @@ And this is what I didn't like in `vue-i18n` or what didn't work for my project:
 
 #### Complicated API for developers
 
-`vue-i18n` has 5 different methods: (`$t`, `$tc`, `$te`, `$d`, `$n`). It has separate methods for formatting simple text, pluralized text, date and numbers.
+`vue-i18n` has 5 different methods: (`$t`, `$tc`, `$te`, `$d`, `$n`). It has separate methods for formatting simple text, pluralized text, date, and numbers.
 
 #### "Leaky" localizations
 
-Grammar of source language limits what features translators can use and leaks into app code and translations messages  of other languages.
+Grammar of source language limits what features translators can use and leaks into app code and translations messages of other languages.
 
 ***Example (pluralization):***
 
@@ -54,7 +54,7 @@ You need to use `$tc` method with additional parameter:
 $tc('copy-n-files', filesCount, { count: filesCount })
 ```
 
-And translators still have no way of knowing, without checking application code, whether translation that uses following format would be pluralized.
+And translators still have no way of knowing, without checking application code, whether translation that uses the following format would be pluralized.
 ```js
 const messages = {
   en: {
@@ -63,7 +63,7 @@ const messages = {
 }
 ```
 
-On top of that, if translator tries to use this syntax and developer did not use `$tc` method, it will not be pluralized and you will see both choise variants displayed in your app.
+On top of that, if translator tries to use this syntax and developer did not use `$tc` method, it will not be pluralized and you will see both choice variants displayed in your app.
 
 <details>
   <summary>
@@ -81,12 +81,12 @@ copy-n-files = { $count ->
 $t('copy-n-files', { count: 5 })
 ```
 
-This syntax can be used in any translation message to choose option based on different plural categories.
+This syntax can be used in any translation message to choose an option based on different plural categories.
 </details>
 
 #### Translators do not have control over translations
 
-Developers are forced to make choises that translators should make: should translation message be pluralized, what date and number format to use.
+Developers are forced to make choices that translators should make: should translation message be pluralized, what date and number format to use.
 
 ***Example (date format):***
 
@@ -115,7 +115,7 @@ const messages = {
 $t('last-online', { date: $d(new Date(), 'short') })
 ```
 
-Translators cannot change date format for particular translation, for example if it does not fit into UI in some language.
+Translators cannot change date formatting for a particular translation, for example, if it does not fit into UI in some language.
 
 <details>
   <summary>
@@ -132,7 +132,7 @@ last-online = User was last online at { DATETIME($date, year: "numeric", month: 
 $t('last-online', { date: new Date() })
 ```
 
-If you want to have predefined date formats it can easily be implemented using custom function. But translators will still be able to choose what format to use in each case.
+If you want to have predefined date formats it can easily be implemented using a custom function. But translators will still be able to choose what format to use in each case.
 
 </details>
 

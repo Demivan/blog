@@ -1,15 +1,15 @@
 ---
-title: Trying to use vue-i18n in real-world application
+title: Difficulties with using vue-i18n in real-world Vue.js application
 description: In this blog post I explain what problems I have encountered when trying to use vue-i18n library for internationalization of my Vue.js app.
 date: 2021-08-08T21:00:00.000+02:00
 lang: en
 duration: 5min
-keywords: vue.js, vue, js, internationalization, vue-i18n
+keywords: vue.js, vue, js, internationalization, vue i18n, localization
 ---
 
-After months of frustration with trying to use the "de-facto" internationalization library for Vue.js - `vue-i18n` (there is no way you can Google a different one), I've decided it is time to replace it. And that is why I have created [fluent-vue](https://fluent-vue.demivan.me). I will write more about it and [Fluent syntax](https://projectfluent.org/) it uses in my following blog posts.
+After few months of frustration with trying to use the "de-facto" internationalization library for Vue.js - `vue-i18n`, I've decided it is time to replace it. And that is why I have created [fluent-vue](https://fluent-vue.demivan.me). I will write more about it and [Fluent syntax](https://projectfluent.org/) it uses in my following blog posts.
 
-In this blog post, I try to explain what problems I have encountered when trying to use the `vue-i18n` library in my app.
+In this blog post, I try to explain what problems I have encountered when trying to use the `vue-i18n` library in my app, and how fluent-vue and Fluent syntax solve them.
 
 ### vue-i18n good parts:
 
@@ -38,7 +38,7 @@ Grammar of source language limits what features translators can use and leaks in
 
 ***Example (pluralization):***
 
-If you want translators to be able to use pluralization, you are forced to use `$tc` method. Even if you don't need it for your source language. You cannot just write:
+If you want translators to be able to use pluralization, you need to use `$tc` method. Even if you don't need it for your source language. You cannot just write:
 ```js
 const messages = {
   en: {
@@ -81,7 +81,7 @@ copy-n-files = { $count ->
 $t('copy-n-files', { count: 5 })
 ```
 
-This syntax can be used in any translation message to choose an option based on different plural categories.
+This syntax can be used in any translation message to choose an option based on plural category, or even a concrete value.
 </details>
 
 #### Translators do not have control over translations

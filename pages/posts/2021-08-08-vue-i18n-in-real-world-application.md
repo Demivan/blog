@@ -136,7 +136,7 @@ If you want to have predefined date formats it can easily be implemented using a
 
 </details>
 
-#### Syntax is not powerfull enought
+#### Syntax is not powerful enough
 
 Even with `$tc` method there is no way to have pluralization that depends on counts of 2 or more objects:
 
@@ -150,7 +150,7 @@ const messages = {
 }
 ```
 
-One possible solution for this issue is spliting translation into three different ones. But is does not look particularly good:
+One possible solution for this issue is splitting translation into three different ones. But is does not look particularly good:
 
 ```js
 $t('apples-and-bananas', {

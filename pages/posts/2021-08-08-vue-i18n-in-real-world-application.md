@@ -1,6 +1,6 @@
 ---
-title: Difficulties with using vue-i18n in real-world Vue.js application
-description: In this blog post I explain what problems I have encountered when trying to use vue-i18n library for internationalization of my Vue.js app.
+title: Difficulties you might encounter when using vue-i18n in real-world Vue.js applications
+description: Post about problems I have encountered when trying to use vue-i18n library for internationalization of my app, and how fluent-vue solves them
 date: 2021-08-08T21:00:00.000+02:00
 lang: en
 duration: 5min

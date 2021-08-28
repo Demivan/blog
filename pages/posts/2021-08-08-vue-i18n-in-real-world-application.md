@@ -15,24 +15,25 @@ In this blog post, I try to explain what problems I have encountered when trying
 
 Firstly, this is what I liked in `vue-i18n`:
 
-#### Component interpolation
+#### 1. Component interpolation
 Component interpolation allows using components inside translation messages. Nice way of reducing `v-html` directive usages.
 
-#### SFC custom blocks
+#### 2. SFC custom blocks
 Keeping translations for the component in the same file as template and js code is really convenient.
 
-#### Tooling
-Being the most used Vue.js internationalization library it has a heap of useful packages and extensions.
+#### 3. Tooling
+Being the most used Vue.js internationalization library, it has a heap of useful packages and extensions.
  
-### vue-i18n issues:
+### vue-i18n's issues:
 
 And this is what I didn't like in `vue-i18n` or what didn't work for my project:
 
-#### Complicated API for developers
+#### 1. Complicated API for developers
 
-`vue-i18n` has 5 different methods: (`$t`, `$tc`, `$te`, `$d`, `$n`). It has separate methods for formatting simple text, pluralized text, date, and numbers.
+`vue-i18n` has 5 different methods: (`$t`, `$tc`, `$te`, `$d`, `$n`). It has separate methods for formatting simple text, pluralized text, date, and numbers.  
+`fluent-vue` has only 2 methods and one of them is rarely used.
 
-#### "Leaky" localizations
+#### 2. "Leaky" localizations
 
 Grammar of source language limits what features translators can use and leaks into app code and translations messages of other languages.
 
@@ -65,10 +66,7 @@ const messages = {
 
 On top of that, if translator tries to use this syntax and developer did not use `$tc` method, it will not be pluralized and you will see both choice variants displayed in your app.
 
-<details>
-  <summary>
-    <em>fluent-vue solution</em>
-  </summary>
+***fluent-vue solution:***
 
 ```ftl
 copy-n-files = { $count -> 
@@ -82,11 +80,11 @@ $t('copy-n-files', { count: 5 })
 ```
 
 This syntax can be used in any translation message to choose an option based on plural category, or even a concrete value.
-</details>
 
-#### Translators do not have control over translations
 
-Developers are forced to make choices that translators should make: should translation message be pluralized, what date and number format to use.
+#### 3. Translators do not have control over translations
+
+Developers are forced to make choices that translators should make: "should translation message be pluralized?", "what date and number format to use?".
 
 ***Example (date format):***
 
@@ -117,10 +115,7 @@ $t('last-online', { date: $d(new Date(), 'short') })
 
 Translators cannot change date formatting for a particular translation, for example, if it does not fit into UI in some language.
 
-<details>
-  <summary>
-    <em>fluent-vue solution</em>
-  </summary>
+***fluent-vue solution:***
 
 Fluent syntax allows translators to call custom function in translation messages. There is built in `DATETIME` function:
 
@@ -134,9 +129,7 @@ $t('last-online', { date: new Date() })
 
 If you want to have predefined date formats it can easily be implemented using a custom function. But translators will still be able to choose what format to use in each case.
 
-</details>
-
-#### Syntax is not powerful enough
+#### 4. Syntax is not powerful enough
 
 Even with `$tc` method there is no way to have pluralization that depends on counts of 2 or more objects:
 
@@ -167,12 +160,10 @@ const messages = {
 }
 ```
 
-<details>
-  <summary>
-    <em>fluent-vue solution</em>
-  </summary>
+***fluent-vue solution:***
 
-Thanks to Fluent syntax you can write it like this:
+Thanks to Fluent syntax you can write translation, without splitting it, like this:
+
 ```js
 $t('apples-and-bananas', { appleCount: 1, bananaCount: 5 })
 ```
@@ -186,4 +177,3 @@ apples-and-bananas = {$appleCount ->
    *[other] {$bananaCount} bananas
 }
 ```
-</details>

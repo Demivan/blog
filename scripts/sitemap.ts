@@ -27,7 +27,12 @@ export const getUpdatedTime = async (
 
 async function run() {
   const stream = new SitemapStream({
-    hostname: DOMAIN
+    hostname: DOMAIN,
+  })
+
+  stream.write({
+    url: '/',
+    changefreq: 'weekly',
   })
 
   stream.write({
@@ -37,7 +42,7 @@ async function run() {
 
   stream.write({
     url: '/posts',
-    changefreq: 'daily'
+    changefreq: 'daily',
   })
 
   await buildBlogSitemap(stream)

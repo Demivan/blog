@@ -147,14 +147,14 @@ One possible solution for this issue is splitting translation into three differe
 
 ```js
 $t('apples-and-bananas', {
-  appleCountText: $tc('apples', 1, { appleCount: 1 })
+  appleCountText: $tc('apples', 1, { appleCount: 1 }),
   bananaCountText: $tc('banana', 5, { bananaCount: 5 }
 })
 
 const messages = {
   en: {
-    'apples-and-bananas': '{appleCountText} and {bananaCountText}'
-    'apples': '{appleCount} apple | {appleCount} apples'
+    'apples-and-bananas': '{appleCountText} and {bananaCountText}',
+    'apples': '{appleCount} apple | {appleCount} apples',
     'bananas': '{bananaCount} banana | {bananaCount} bananas'
   }
 }

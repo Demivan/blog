@@ -148,7 +148,7 @@ One possible solution for this issue is splitting translation into three differe
 ```js
 $t('apples-and-bananas', {
   appleCountText: $tc('apples', 1, { appleCount: 1 }),
-  bananaCountText: $tc('banana', 5, { bananaCount: 5 }
+  bananaCountText: $tc('banana', 5, { bananaCount: 5 })
 })
 
 const messages = {

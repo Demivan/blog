@@ -13,6 +13,9 @@ projects:
     - name: 'fluent.js'
       link: 'https://github.com/projectfluent/fluent.js'
       desc: 'JavaScript implementation of Project Fluent'
+    - name: 'vitest'
+      link: 'https://github.com/vitest-dev/vitest'
+      desc: "A Vite-native test framework. It's fast!"
 
 ---
 

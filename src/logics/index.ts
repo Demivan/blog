@@ -9,5 +9,5 @@ export function formatDate(d: string | Date) {
   const date = parseJSON(d)
   if (isSameYear(date, new Date()))
     return format(date, 'MMM d')
-  return format(date, 'MMM d, YYYY')
+  return format(date, 'MMM d, yyyy')
 }

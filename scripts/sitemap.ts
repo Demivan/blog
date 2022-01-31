@@ -1,5 +1,5 @@
 import { dirname } from 'path'
-import execa from 'execa'
+import { execa } from 'execa'
 import fg from 'fast-glob'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
@@ -10,16 +10,16 @@ const DOMAIN = 'https://demivan.me'
 /**
  * Get unix timestamp in milliseconds of the last commit
  */
-export const getUpdatedTime = async (
+export const getUpdatedTime = async(
   filePath: string,
-  cwd: string
+  cwd: string,
 ): Promise<number> => {
   const { stdout } = await execa(
     'git',
     ['--no-pager', 'log', '-1', '--format=%at', filePath],
     {
       cwd,
-    }
+    },
   )
 
   return Number.parseInt(stdout, 10) * 1000
@@ -71,7 +71,7 @@ async function buildBlogSitemap(stream: SitemapStream) {
             url: i.replace(/.md$/, '').replace(/^pages/, ''),
             lastmodISO: new Date(await getUpdatedTime(i, '.')).toISOString(),
             changefreq: 'weekly',
-            ...data
+            ...data,
           }
 
           return sitemapItem
@@ -79,9 +79,8 @@ async function buildBlogSitemap(stream: SitemapStream) {
     ))
     .filter(Boolean)
 
-  for (const post of posts) {
+  for (const post of posts)
     stream.write(post)
-  }
 }
 
 async function buildNotesSitemap(stream: SitemapStream) {
@@ -89,7 +88,7 @@ async function buildNotesSitemap(stream: SitemapStream) {
 }
 
 async function writeSitemap(stream: SitemapStream) {
-  const path = `./dist/sitemap.xml`
+  const path = './dist/sitemap.xml'
   await fs.ensureDir(dirname(path))
 
   stream.pipe(fs.createWriteStream(path)).on('error', e => { throw e })

@@ -1,6 +1,4 @@
-import parseJSON from 'date-fns/parseJSON'
-import isSameYear from 'date-fns/isSameYear'
-import format from 'date-fns/format'
+import { parseJSON, isSameYear, format } from 'date-fns'
 import { useDark } from '@vueuse/core'
 
 export const isDark = useDark()

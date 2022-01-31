@@ -6,7 +6,7 @@ import './styles/markdown.postcss'
 import autoRoutes from 'pages-generated'
 import NProgress from 'nprogress'
 import { ViteSSG } from 'vite-ssg'
-import { RouterScrollBehavior } from 'vue-router'
+import type { RouterScrollBehavior } from 'vue-router'
 import App from './App.vue'
 
 declare module 'vue-router' {

@@ -3,8 +3,9 @@ import { UserConfig } from 'vite'
 import fs from 'fs-extra'
 import Pages from 'vite-plugin-pages'
 import PurgeIcons from 'vite-plugin-purge-icons'
-import Icons, { ViteIconsResolver } from 'vite-plugin-icons'
-import ViteComponents from 'vite-plugin-components'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
 import Markdown from 'vite-plugin-md'
 import Vue from '@vitejs/plugin-vue'
 import Shiki from 'markdown-it-shiki'
@@ -95,13 +96,15 @@ const config = async (): Promise<UserConfig> => {
         },
       }),
 
-      ViteComponents({
+      Components({
         extensions: ['vue', 'md', 'ts'],
-        globalComponentsDeclaration: true,
-        customLoaderMatcher: path => path.endsWith('.md'),
-        customComponentResolvers: ViteIconsResolver({
-          componentPrefix: '',
-        }),
+        dts: true,
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        resolvers: [
+          IconsResolver({
+            componentPrefix: '',
+          }),
+        ],
       }),
 
       PurgeIcons(),

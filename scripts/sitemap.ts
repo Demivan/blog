@@ -3,7 +3,7 @@ import { execa } from 'execa'
 import fg from 'fast-glob'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
-import { SitemapStream, SitemapItemLoose } from 'sitemap'
+import { SitemapStream, SitemapItemLoose, EnumChangefreq } from 'sitemap'
 
 const DOMAIN = 'https://demivan.me'
 
@@ -31,7 +31,7 @@ async function run() {
   })
 
   stream.write({
-    url: '/',
+    url: '',
     changefreq: 'weekly',
   })
 
@@ -52,7 +52,7 @@ async function run() {
 }
 
 async function buildBlogSitemap(stream: SitemapStream) {
-  const files = await fg('pages/posts/*.md')
+  const files = await fg('src/posts/*.md')
 
   const posts: SitemapItemLoose[] = (
     await Promise.all(
@@ -68,9 +68,9 @@ async function buildBlogSitemap(stream: SitemapStream) {
             data.image = DOMAIN + data.image
 
           const sitemapItem: SitemapItemLoose = {
-            url: i.replace(/.md$/, '').replace(/^pages/, ''),
+            url: i.replace(/.md$/, '.html').replace(/^src/, ''),
             lastmodISO: new Date(await getUpdatedTime(i, '.')).toISOString(),
-            changefreq: 'weekly',
+            changefreq: EnumChangefreq.WEEKLY,
             ...data,
           }
 

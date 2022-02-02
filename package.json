@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "vitepress dev src",
-    "build": "cross-env NODE_ENV=development vitepress build src && esno ./scripts/rss.ts && esno ./scripts/sitemap.ts",
+    "build": "cross-env NODE_ENV=production vitepress build src && esno ./scripts/rss.ts && esno ./scripts/sitemap.ts",
     "lint": "eslint src"
   },
   "homepage": "https://demivan.me",

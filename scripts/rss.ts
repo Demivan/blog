@@ -23,7 +23,7 @@ async function run() {
 }
 
 async function buildBlogRSS() {
-  const files = await fg('pages/posts/*.md')
+  const files = await fg('src/posts/*.md')
 
   const options = {
     title: 'Ivan Demchuk',
@@ -55,6 +55,7 @@ async function buildBlogRSS() {
 
           return {
             ...data,
+            link: DOMAIN + i.replace(/.md$/, '.html').replace(/^src/, ''),
             content: html,
             author: [AUTHOR],
           }

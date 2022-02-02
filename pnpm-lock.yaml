@@ -17,6 +17,7 @@ specifiers:
   fs-extra: ^10.0.0
   gray-matter: ^4.0.3
   markdown-it: ^12.3.2
+  markdown-it-anchor: ^8.4.1
   shiki: ^0.10.0
   sitemap: ^7.1.1
   typescript: ^4.5.5
@@ -47,6 +48,7 @@ devDependencies:
   fs-extra: 10.0.0
   gray-matter: 4.0.3
   markdown-it: 12.3.2
+  markdown-it-anchor: 8.4.1_d643ca6eb40ae68ab966a77bead78073
   shiki: 0.10.0
   sitemap: 7.1.1
   typescript: 4.5.5
@@ -2464,6 +2466,16 @@ packages:
     resolution: {integrity: sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA==}
     dependencies:
       sourcemap-codec: 1.4.8
+
+  /markdown-it-anchor/8.4.1_d643ca6eb40ae68ab966a77bead78073:
+    resolution: {integrity: sha512-sLODeRetZ/61KkKLJElaU3NuU2z7MhXf12Ml1WJMSdwpngeofneCRF+JBbat8HiSqhniOMuTemXMrsI7hA6XyA==}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: 12.3.2
+    dev: true
 
   /markdown-it/12.3.2:
     resolution: {integrity: sha512-TchMembfxfNVpHkbtriWltGWc+m3xszaRD0CZup7GFFhzIgQqxIfn3eGj1yZpfuflzPvfkt611B2Q/Bsk1YnGg==}

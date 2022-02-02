@@ -2,6 +2,7 @@ import { defineConfigWithTheme, UserConfig } from 'vitepress'
 
 import { resolve } from 'path'
 
+import anchor from 'markdown-it-anchor'
 import { BUNDLED_LANGUAGES, getHighlighter } from 'shiki'
 
 import Icons from 'unplugin-icons/vite'
@@ -26,6 +27,11 @@ export default defineConfigWithTheme(async() => {
   return <UserConfig<any>>{
     outDir: resolve('dist/'),
     markdown: {
+      anchor: {
+        permalink: anchor.permalink.headerLink({
+          safariReaderFix: true,
+        })
+      },
       highlight: (str, lang, attrs) => {
         return highlighter.codeToHtml(str, { lang, theme: 'material-palenight' })
       }
@@ -69,7 +75,7 @@ export default defineConfigWithTheme(async() => {
 
         WindiCSS({
           config: resolve('./src/.vitepress/windicss.config.ts'),
-          safelist: 'prose prose-sm m-auto'.split(' '),
+          safelist: 'prose prose-sm m-auto sr-only'.split(' '),
           preflight: {
             enableAll: true,
           },

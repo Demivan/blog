@@ -1,3 +1,8 @@
+.shiki {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+
 .prose {
   --fg: #555;
   --fg-deep: #222;

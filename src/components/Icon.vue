@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { nextTick, onMounted, ref, watch } from 'vue'
-import {  } from '@iconify/iconify'
+import { renderSVG } from '@iconify/iconify'
 
 const props = defineProps({
   icon: {
@@ -18,7 +18,7 @@ const el = ref<HTMLElement | null>(null)
 const update = async() => {
   if (el.value) {
     await nextTick()
-    const svg = Iconify.renderSVG(props.icon, {})
+    const svg = renderSVG(props.icon, {})
     if (svg) {
       el.value.textContent = ''
       el.value.appendChild(svg)

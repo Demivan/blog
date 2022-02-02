@@ -6,7 +6,9 @@
 </template>
 
 <script setup lang='ts'>
-import { isDark } from '/~/logics'
+import { useDark } from '@vueuse/core'
+
+const isDark = useDark()
 
 function toggleDark() {
   isDark.value = !isDark.value

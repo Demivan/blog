@@ -1,31 +1,33 @@
 <script setup lang="ts">
 import { isDark } from '/~/logics'
+
+import ToggleTheme from './ToggleTheme.vue'
 </script>
 
 <template>
   <header class="header">
-    <router-link
+    <a
       class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
-      to="/"
+      href="/"
       focusable="false"
     >
       <majesticons:home style="font-size: 1.75em;" />
-    </router-link>
+    </a>
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <router-link to="/posts">
+        <a href="/posts">
           <span class="<md:hidden">Blog</span>
           <ri-article-line class="md:hidden" />
-        </router-link>
-        <router-link to="/projects">
+        </a>
+        <a href="/projects">
           <span class="<md:hidden">Projects</span>
           <ri-lightbulb-line class="md:hidden" />
-        </router-link>
+        </a>
         <!--
-        <router-link to="/notes" title="Notes">
+        <a href="/notes" title="Notes">
           <ri-sticky-note-line />
-        </router-link>
+        </a>
         -->
         <a href="https://twitter.com/IvanDemchuk" target="_blank" title="Twitter">
           <feather-twitter />

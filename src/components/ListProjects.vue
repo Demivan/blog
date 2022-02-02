@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { projects } = defineProps<{ projects: Record<string, any[]> }>()
+import Icon from './Icon.vue'
+
+defineProps<{ projects: Record<string, any[]> }>()
 </script>
 
 <template>
@@ -14,7 +16,7 @@ const { projects } = defineProps<{ projects: Record<string, any[]> }>()
         class="item relative flex"
         :href="item.link"
         target="_blank"
-        :class="!item.link ? &quot;opacity-0 pointer-events-none h-0 -mt-8 -mb-4&quot; : &quot;&quot;"
+        :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
       >
         <div v-if="item.icon" class="pt-2 pr-5">
           <Icon class="text-3xl opacity-50" :icon="item.icon || 'carbon:unknown'" />

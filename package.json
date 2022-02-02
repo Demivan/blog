@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "preview": "vite preview",
-    "build": "cross-env NODE_ENV=production vite-ssg build && esno ./scripts/rss.ts && esno ./scripts/sitemap.ts"
+    "dev": "vitepress dev src",
+    "build": "cross-env NODE_ENV=development vitepress build src && esno ./scripts/rss.ts && esno ./scripts/sitemap.ts",
+    "lint": "eslint src"
   },
   "homepage": "https://demivan.me",
   "repository": {
@@ -14,25 +14,15 @@
     "@iconify/iconify": "^2.1.2",
     "@vueuse/core": "^7.5.5",
     "@vueuse/head": "^0.7.5",
-    "date-fns": "^2.28.0",
-    "nprogress": "^0.2.0",
-    "vue": "^3.2.29",
-    "vue-router": "^4.0.12"
+    "vue": "^3.2.29"
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.16.1",
     "@iconify/json": "^2.0.31",
-    "@types/diacritics": "^1.3.1",
     "@types/fs-extra": "^9.0.13",
     "@types/markdown-it": "^12.2.3",
     "@types/nprogress": "^0.2.0",
-    "@vitejs/plugin-vue": "^2.1.0",
-    "@vue/compiler-sfc": "^3.2.29",
-    "@vue/server-renderer": "^3.2.29",
-    "@vuedx/typescript-plugin-vue": "^0.7.4",
-    "critters": "^0.0.16",
     "cross-env": "^7.0.3",
-    "diacritics": "^1.3.0",
     "eslint": "^8.8.0",
     "esno": "^0.14.0",
     "execa": "^6.0.0",
@@ -41,21 +31,15 @@
     "fs-extra": "^10.0.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^12.3.2",
-    "markdown-it-anchor": "^8.4.1",
-    "markdown-it-link-attributes": "^4.0.0",
-    "markdown-it-shiki": "^0.3.0",
     "shiki": "^0.10.0",
     "sitemap": "^7.1.1",
     "typescript": "^4.5.5",
     "unplugin-icons": "^0.13.0",
     "unplugin-vue-components": "^0.17.15",
-    "vite": "^2.7.13",
-    "vite-plugin-md": "^0.11.7",
-    "vite-plugin-pages": "^0.20.1",
     "vite-plugin-purge-icons": "^0.7.0",
     "vite-plugin-pwa": "^0.11.13",
     "vite-plugin-windicss": "^1.6.3",
-    "vite-ssg": "^0.17.9",
+    "vitepress": "^0.21.6",
     "windicss": "^3.4.3"
   },
   "eslintConfig": {

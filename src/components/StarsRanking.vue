@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getStarsRankingUrl } from '../logics/getStarsRanking'
+import { getStarsRankingUrl } from './logic/getStarsRanking'
 </script>
 
 <template>

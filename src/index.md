@@ -1,9 +1,12 @@
 ---
-title: Ivan Demchuk
-description: Ivan Demchuk's Blog
+title: ' '
+display: 'Ivan Demchuk'
 ---
 
 Hi 👋, I'm Ivan Demchuk. I'm Tech Lead, Full-Stack Developer working in Lviv, Ukraine.
+
+Creator of [fluent-vue](https://github.com/demivan/fluent-vue)  
+Team member of [Vitest](https://github.com/vitest-dev/vitest)
 
  - 🔭 I'm currently working on Vue.js i18n plugin - `fluent-vue`  
   GitHub: [fluent-vue](https://github.com/demivan/fluent-vue)  

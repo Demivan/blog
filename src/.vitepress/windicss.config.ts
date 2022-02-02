@@ -7,6 +7,8 @@ export default defineConfig({
       'index.html',
       'pages/**/*.md',
       'src/**/*.{vue,ts}',
+      '**/*.{vue,html,md,jsx,tsx}',
+      '.vitepress/**/*.{vue,html,md,jsx,tsx}'
     ],
   },
   darkMode: 'class',

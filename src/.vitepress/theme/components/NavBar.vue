@@ -29,10 +29,10 @@ import ToggleTheme from './ToggleTheme.vue'
           <ri-sticky-note-line />
         </a>
         -->
-        <a href="https://twitter.com/IvanDemchuk" target="_blank" title="Twitter">
+        <a href="https://twitter.com/IvanDemchuk" rel="noopener" target="_blank" title="Twitter">
           <feather-twitter />
         </a>
-        <a href="https://github.com/demivan" target="_blank" title="GitHub">
+        <a href="https://github.com/demivan" rel="noopener" target="_blank" title="GitHub">
           <uil-github-alt />
         </a>
         <a href="/feed.xml" target="_blank" title="RSS" class="<md:hidden">

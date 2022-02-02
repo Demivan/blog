@@ -40,10 +40,9 @@ export default defineConfigWithTheme(async() => {
       ['meta', { name: 'revisit-after', content: '7 days' }],
       ['meta', { name: 'twitter:card', content: 'summary' }],
       ['meta', { name: 'twitter:creator', content: '@IvanDemchuk' }],
-      ['link', { href: '/favicon.svg', rel: 'icon', type: 'image/svg+xml' }],
+      // ['link', { href: '/favicon.svg', rel: 'icon', type: 'image/svg+xml' }],
       ['meta', { name: 'theme-color', content: '#ffffff' }],
       ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
-      ['link', { href: 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@200;400;600&display=swap', rel: 'stylesheet' }],
     ],
     vite: {
       define: {

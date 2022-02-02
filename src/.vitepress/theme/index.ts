@@ -4,6 +4,7 @@ import 'windi.css'
 
 import Layout from './components/Layout.vue'
 import './styles/main.css'
+import './styles/fonts.css'
 import './styles/prose.css'
 import './styles/markdown.css'
 

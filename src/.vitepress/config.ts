@@ -49,7 +49,9 @@ export default defineConfigWithTheme(async() => {
       // ['link', { href: '/favicon.svg', rel: 'icon', type: 'image/svg+xml' }],
       ['meta', { name: 'theme-color', content: '#ffffff' }],
       ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
-      ['script', { defer: 'defer', src: 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "ac0b1366d5e54c43a78cfc2c56070cab"}' }],
+      ...process.env.NODE_ENV === 'production' ? [
+        ['script', { defer: 'defer', src: 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "ac0b1366d5e54c43a78cfc2c56070cab"}' }],
+      ] : []
     ],
     vite: {
       define: {

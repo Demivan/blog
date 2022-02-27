@@ -8,6 +8,9 @@ Hi 👋, I'm Ivan Demchuk. I'm Tech Lead, Full-Stack Developer working in Lviv, 
 Creator of [fluent-vue](https://github.com/demivan/fluent-vue)  
 Core team member of [Vitest](https://github.com/vitest-dev/vitest)
 
+
+> # 🇺🇦 UKRAINE NEEDS YOUR HELP NOW!
+> 
 > **My country, Ukraine, [is being invaded by the Russian Federation, right now](https://www.bbc.com/news/world-europe-60504334)**. I'm safe with my family in the western part of Ukraine. At least for now.
 > Russia is hitting target all over my country by ballistic missiles.
 >

@@ -1,7 +1,49 @@
-<script setup lang="ts">
-import Icon from './Icon.vue'
+<page>
+title: Projects
+subtitle: List of projects I'm working on
+description: List of projects I'm working on
+</page>
 
-defineProps<{ projects: Record<string, any[]> }>()
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const projects = {
+  'Vue': [
+    {
+      name: 'fluent-vue',
+      link: 'https://github.com/demivan/fluent-vue',
+      desc: 'Internationalization plugin for Vue 2 and 3. Vue.js integration of fluent.js',
+    },
+  ],
+  'Contributing to': [
+    {
+      name: 'fluent.js',
+      link: 'https://github.com/projectfluent/fluent.js',
+      desc: 'JavaScript implementation of Project Fluent',
+    }, {
+      name: 'vitest',
+      link: 'https://github.com/vitest-dev/vitest',
+      desc: 'A Vite-native test framework. It\'s fast!',
+      icon: 'logos:vitest',
+    },
+  ],
+}
+
+const rankingUrl = computed(() => {
+  const users = [
+    'demivan',
+  ]
+  const repos = [
+    'demivan/fluent-vue',
+  ]
+
+  const query = [
+    ...users.map(i => `user:${i}`),
+    ...repos.map(i => `repo:${i}`),
+  ].join(' ')
+
+  return `https://github.com/search?l=&o=desc&s=stars&type=Repositories&q=${encodeURIComponent(query)}`
+})
 </script>
 
 <template>
@@ -31,6 +73,8 @@ defineProps<{ projects: Record<string, any[]> }>()
       </a>
     </div>
   </template>
+
+  <a :href="rankingUrl" target="_blank">All projects sorted by Stars</a>
 </template>
 
 <style lang="postcss">

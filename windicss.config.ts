@@ -4,11 +4,7 @@ import typography from 'windicss/plugin/typography'
 export default defineConfig({
   extract: {
     include: [
-      'index.html',
-      'pages/**/*.md',
       'src/**/*.{vue,ts}',
-      '**/*.{vue,html,md,jsx,tsx}',
-      '.vitepress/**/*.{vue,html,md,jsx,tsx}'
     ],
   },
   darkMode: 'class',

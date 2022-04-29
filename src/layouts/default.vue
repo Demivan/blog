@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useData, useRoute } from 'vitepress'
+import { usePage, useRoute } from 'iles'
 
-import NavBar from './NavBar.vue'
-import Footer from './Footer.vue'
+import NavBar from './components/NavBar.vue'
+import Footer from './components/Footer.vue'
 
 const route = useRoute()
-const { frontmatter } = useData()
+const { frontmatter } = usePage()
 
 function formatDate(date: number | string | Date) {
   if (!(date instanceof Date))
@@ -35,7 +35,9 @@ function formatDate(date: number | string | Date) {
         </p>
       </div>
       <article>
-        <Content class="prose mx-auto" />
+        <div class="prose mx-auto">
+          <slot />
+        </div>
       </article>
 
       <div v-if="route.path !== '/' && route.path !== '/index.html'" class="prose m-auto mt-8 mb-8">

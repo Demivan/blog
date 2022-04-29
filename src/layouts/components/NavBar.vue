@@ -10,34 +10,29 @@ import ToggleTheme from './ToggleTheme.vue'
       focusable="false"
       title="Go to frontpage"
     >
-      <majesticons:home style="font-size: 1.75em;" aria-hidden="true" />
+      <icon-majesticons:home style="font-size: 1.75em;" aria-hidden="true" />
     </a>
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
         <a href="/posts" title="Blog">
           <span class="<md:hidden">Blog</span>
-          <ri-article-line class="md:hidden" />
+          <icon-ri-article-line class="md:hidden" />
         </a>
         <a href="/projects" title="Projects">
           <span class="<md:hidden">Projects</span>
-          <ri-lightbulb-line class="md:hidden" />
+          <icon-ri-lightbulb-line class="md:hidden" />
         </a>
-        <!--
-        <a href="/notes" title="Notes">
-          <ri-sticky-note-line />
-        </a>
-        -->
         <a href="https://twitter.com/IvanDemchuk" rel="noopener" target="_blank" title="Twitter">
-          <feather-twitter aria-hidden="true" />
+          <icon-feather-twitter aria-hidden="true" />
         </a>
         <a href="https://github.com/demivan" rel="noopener" target="_blank" title="GitHub">
-          <uil-github-alt aria-hidden="true" />
+          <icon-uil-github-alt aria-hidden="true" />
         </a>
         <a href="/feed.xml" target="_blank" title="RSS" class="<md:hidden">
-          <la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" aria-hidden="true" />
+          <icon-la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" aria-hidden="true" />
         </a>
-        <toggle-theme />
+        <ToggleTheme />
       </div>
     </nav>
   </header>

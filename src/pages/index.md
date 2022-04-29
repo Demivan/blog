@@ -1,5 +1,4 @@
 ---
-title: ' '
 display: 'Ivan Demchuk'
 ---
 

@@ -26,8 +26,8 @@ export default defineApp({
 
     script: process.env.NODE_ENV === 'production'
       ? [
-        { 'defer': 'defer', 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "ac0b1366d5e54c43a78cfc2c56070cab"}' },
-      ]
+          { 'defer': 'defer', 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "ac0b1366d5e54c43a78cfc2c56070cab"}' },
+        ]
       : [],
   },
 })

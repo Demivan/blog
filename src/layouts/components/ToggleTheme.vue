@@ -1,10 +1,3 @@
-<template>
-  <button id="toggle-theme" onclick="toggleDark()">
-    <icon-ri-moon-line class="icon-moon hidden" aria-hidden="true" />
-    <icon-ri-sun-line class="icon-sun hidden" aria-hidden="true" />
-  </button>
-</template>
-
 <script client:load lang="ts">
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)')
 
@@ -18,7 +11,7 @@ function updateDark() {
   toggleThemeButton?.setAttribute('aria-pressed', isDark ? 'true' : 'false')
   toggleThemeButton?.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode')
   toggleThemeButton?.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode')
-  toggleThemeButton?.getElementsByClassName('icon-moon')[0].classList.toggle('hidden', !zisDark)
+  toggleThemeButton?.getElementsByClassName('icon-moon')[0].classList.toggle('hidden', !isDark)
   toggleThemeButton?.getElementsByClassName('icon-sun')[0].classList.toggle('hidden', isDark)
 }
 
@@ -30,3 +23,10 @@ window.toggleDark = () => {
   updateDark()
 }
 </script>
+
+<template>
+  <button id="toggle-theme" onclick="toggleDark()">
+    <icon-ri-moon-line class="icon-moon hidden" aria-hidden="true" />
+    <icon-ri-sun-line class="icon-sun hidden" aria-hidden="true" />
+  </button>
+</template>

@@ -4,6 +4,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "lib": ["DOM", "ESNext"],
+    "jsx": "preserve",
     "strict": true,
     "esModuleInterop": true,
     "incremental": true,

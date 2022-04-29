@@ -18,7 +18,7 @@ function updateDark() {
   toggleThemeButton?.setAttribute('aria-pressed', isDark ? 'true' : 'false')
   toggleThemeButton?.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode')
   toggleThemeButton?.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode')
-  toggleThemeButton?.getElementsByClassName('icon-moon')[0].classList.toggle('hidden', !isDark)
+  toggleThemeButton?.getElementsByClassName('icon-moon')[0].classList.toggle('hidden', !zisDark)
   toggleThemeButton?.getElementsByClassName('icon-sun')[0].classList.toggle('hidden', isDark)
 }
 

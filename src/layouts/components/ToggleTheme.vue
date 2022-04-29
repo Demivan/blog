@@ -1,22 +1,32 @@
 <template>
-  <button :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'" onclick="toggleDark()">
-    <icon-ri-moon-line v-show="isDark" aria-hidden="true" />
-    <icon-ri-sun-line v-show="!isDark" aria-hidden="true" />
+  <button id="toggle-theme" onclick="toggleDark()">
+    <icon-ri-moon-line class="icon-moon hidden" aria-hidden="true" />
+    <icon-ri-sun-line class="icon-sun hidden" aria-hidden="true" />
   </button>
 </template>
 
 <script client:load lang="ts">
-import { useDark } from '@vueuse/core'
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)')
 
-const isDark = useDark()
+const savedTheme = localStorage.getItem('theme')
+let isDark = savedTheme === null ? prefersDark.matches : savedTheme === 'dark'
+
+const toggleThemeButton = document.getElementById('toggle-theme')
+
+function updateDark() {
+  document.documentElement.classList.toggle('dark', isDark)
+  toggleThemeButton?.setAttribute('aria-pressed', isDark ? 'true' : 'false')
+  toggleThemeButton?.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode')
+  toggleThemeButton?.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode')
+  toggleThemeButton?.getElementsByClassName('icon-moon')[0].classList.toggle('hidden', !isDark)
+  toggleThemeButton?.getElementsByClassName('icon-sun')[0].classList.toggle('hidden', isDark)
+}
+
+updateDark()
 
 window.toggleDark = () => {
-  isDark.value = !isDark.value
+  isDark = !isDark
+  localStorage.setItem('theme', isDark ? 'dark' : 'light')
+  updateDark()
 }
-</script>
-
-<script setup lang='ts'>
-import { useDark } from '@vueuse/core'
-
-const isDark = useDark()
 </script>

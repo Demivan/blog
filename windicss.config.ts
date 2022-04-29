@@ -4,7 +4,7 @@ import typography from 'windicss/plugin/typography'
 export default defineConfig({
   extract: {
     include: [
-      'src/**/*.{vue,ts}',
+      'src/**/*.{vue,ts,md,mdx}',
     ],
   },
   darkMode: 'class',

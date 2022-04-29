@@ -23,7 +23,7 @@ const projects = {
     }, {
       name: 'vitest',
       link: 'https://github.com/vitest-dev/vitest',
-      desc: 'A Vite-native test framework. It\'s fast!',
+      desc: 'A blazing fast unit test framework powered by Vite.',
       icon: 'logos:vitest',
     },
   ],

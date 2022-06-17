@@ -13,7 +13,7 @@ const projects = {
       name: 'fluent-vue',
       link: 'https://github.com/fluent-vue/fluent-vue',
       desc: 'Internationalization plugin for Vue 2 and 3. Vue.js integration of fluent.js',
-      icon: 'i-logo-fluent-vue'
+      icon: 'i-logos-fluent-vue'
     },
   ],
   'Contributing to': [
@@ -21,6 +21,7 @@ const projects = {
       name: 'fluent.js',
       link: 'https://github.com/projectfluent/fluent.js',
       desc: 'JavaScript implementation of Project Fluent',
+	    icon: 'i-logos-fluent text-6xl'
     }, {
       name: 'vitest',
       link: 'https://github.com/vitest-dev/vitest',
@@ -62,7 +63,7 @@ const rankingUrl = computed(() => {
         :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
       >
         <div v-if="item.icon" class="pt-2 pr-5">
-          <div class="text-4xl opacity-100" :class="item.icon || 'i-carbon-unknown'" />
+          <div class="text-4xl" :class="item.icon || 'i-carbon-unknown'" />
         </div>
         <div class="flex-auto">
           <div class="text-normal">{{ item.name }}</div>

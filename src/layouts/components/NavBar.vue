@@ -10,7 +10,7 @@ import ToggleTheme from './ToggleTheme.vue'
       focusable="false"
       title="Go to frontpage"
     >
-	    <div class="i-typcn:home text-4xl" aria-hidden="true"></div> 
+      <div class="i-typcn:home text-4xl" aria-hidden="true" />
     </a>
     <nav class="nav">
       <div class="spacer" />
@@ -60,7 +60,7 @@ import ToggleTheme from './ToggleTheme.vue'
 }
 
 .nav div[class^="i-"] {
-	font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .header a, .header button {

@@ -13,7 +13,7 @@ const projects = {
       name: 'fluent-vue',
       link: 'https://github.com/fluent-vue/fluent-vue',
       desc: 'Internationalization plugin for Vue 2 and 3. Vue.js integration of fluent.js',
-      icon: 'i-logos-fluent-vue'
+      icon: 'i-logos-fluent-vue',
     },
   ],
   'Contributing to': [
@@ -21,7 +21,7 @@ const projects = {
       name: 'fluent.js',
       link: 'https://github.com/projectfluent/fluent.js',
       desc: 'JavaScript implementation of Project Fluent',
-	    icon: 'i-logos-fluent text-6xl dark-invert'
+      icon: 'i-logos-fluent text-6xl dark-invert',
     }, {
       name: 'vitest',
       link: 'https://github.com/vitest-dev/vitest',
@@ -81,17 +81,17 @@ const rankingUrl = computed(() => {
 
 <style scoped>
 .project-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 a.item {
-	padding: 0.8em 1em;
-	background: transparent;
-	font-size: 1.1rem;
+  padding: 0.8em 1em;
+  background: transparent;
+  font-size: 1.1rem;
 }
 
 a.item:hover {
-	background: #88888808;
+  background: #88888808;
 }
 </style>

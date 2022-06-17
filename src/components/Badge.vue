@@ -18,7 +18,7 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 	.badge {
 		color: white;
 		display: flex;

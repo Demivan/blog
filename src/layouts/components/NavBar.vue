@@ -38,7 +38,7 @@ import ToggleTheme from './ToggleTheme.vue'
   </header>
 </template>
 
-<style scoped>
+<style>
 .header h1 {
   margin-bottom: 0;
 }

@@ -4,13 +4,19 @@
 
 <script setup lang="ts">
 import { nextTick, onMounted, ref, watch } from 'vue'
-import { renderSVG } from '@iconify/iconify'
+import { renderSVG, addIcon } from '@iconify/iconify'
 
 const props = defineProps({
   icon: {
     type: String,
     required: true,
   },
+})
+
+addIcon('logos:fluent-vue', {
+	body: '<path fill="#41B883" d="M517 5H414.6L209.8 359.4 261 448 517 5" /> <path fill="#34495E" d="m5 5 204.8 354.4 51.2-88.6-34.083-58.979h34.095l51.235-88.661H175.682l-17.047-29.499h170.659L380.529 5H5" />',
+	width: 522,
+	height: 453,
 })
 
 const el = ref<HTMLElement | null>(null)

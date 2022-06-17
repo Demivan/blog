@@ -11,8 +11,9 @@ const projects = {
   'Vue': [
     {
       name: 'fluent-vue',
-      link: 'https://github.com/demivan/fluent-vue',
+      link: 'https://github.com/fluent-vue/fluent-vue',
       desc: 'Internationalization plugin for Vue 2 and 3. Vue.js integration of fluent.js',
+      icon: 'logos:fluent-vue'
     },
   ],
   'Contributing to': [

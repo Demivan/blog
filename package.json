@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "iles dev --open",
+    "dev": "iles dev",
     "build": "iles build",
     "preview": "iles preview --open",
     "lint": "eslint src"
@@ -12,22 +12,20 @@
     "url": "git+https://github.com/demivan/blog.git"
   },
   "dependencies": {
-    "@iconify/iconify": "^2.2.1",
+    "@unocss/reset": "^0.39.0",
     "vue": "^3.2.29"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.21.1",
-    "@iconify/json": "^2.1.34",
+    "@iconify/json": "^2.1.63",
     "@islands/feed": "^0.1.2",
     "@islands/headings": "^0.1.2",
-    "@islands/icons": "^0.1.1",
     "eslint": "^8.14.0",
     "iles": "^0.7.38",
     "shiki": "^0.10.1",
     "typescript": "^4.6.4",
-    "vite": "^2.9.6",
-    "vite-plugin-windicss": "^1.8.4",
-    "windicss": "^3.5.1"
+    "unocss": "^0.39.0",
+    "vite": "^2.9.6"
   },
   "eslintConfig": {
     "extends": "@antfu/eslint-config"

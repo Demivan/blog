@@ -1,6 +1,7 @@
 import { defineConfig } from 'iles'
 
-import WindiCSS from 'vite-plugin-windicss'
+import Unocss from 'unocss/vite'
+import { presetWind, presetWebFonts, presetIcons } from 'unocss'
 
 import { BUNDLED_LANGUAGES, getHighlighter } from 'shiki'
 
@@ -32,7 +33,6 @@ export default defineConfig(async() => {
     siteUrl: 'https://demivan.me',
     modules: [
       '@islands/feed',
-      '@islands/icons',
       '@islands/headings',
     ],
     markdown: {
@@ -58,12 +58,26 @@ export default defineConfig(async() => {
     },
     vite: {
       plugins: [
-        WindiCSS({
+        Unocss({
           safelist: 'prose prose-sm m-auto sr-only'.split(' '),
-          preflight: {
-            enableAll: true,
-          },
-        }),
+          presets: [
+            presetWind(),
+            presetWebFonts({
+              provider: 'none',
+              fonts: {
+                sans: '"Inter", Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+                mono: 'Fira Code'
+              },
+            }),
+            presetIcons({
+              collections: {
+                logo: {
+                  'fluent-vue': `<svg xmlns="http://www.w3.org/2000/svg" width="522" height="453" viewBox="0 0 522 453"><path fill="#41B883" d="M517 5H414.6L209.8 359.4 261 448 517 5" /><path fill="#34495E" d="m5 5 204.8 354.4 51.2-88.6-34.083-58.979h34.095l51.235-88.661H175.682l-17.047-29.499h170.659L380.529 5H5" /></svg>`
+                }
+              }
+            }),
+          ]
+        })
       ],
     },
   }

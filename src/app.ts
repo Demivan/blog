@@ -1,6 +1,7 @@
 import { defineApp } from 'iles'
 
-import 'windi.css'
+import '@unocss/reset/tailwind.css'
+import 'uno.css'
 
 import '~/styles/main.css'
 import '~/styles/fonts.css'

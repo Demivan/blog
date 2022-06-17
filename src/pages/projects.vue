@@ -13,7 +13,7 @@ const projects = {
       name: 'fluent-vue',
       link: 'https://github.com/fluent-vue/fluent-vue',
       desc: 'Internationalization plugin for Vue 2 and 3. Vue.js integration of fluent.js',
-      icon: 'logos:fluent-vue'
+      icon: 'i-logo-fluent-vue'
     },
   ],
   'Contributing to': [
@@ -25,7 +25,7 @@ const projects = {
       name: 'vitest',
       link: 'https://github.com/vitest-dev/vitest',
       desc: 'A blazing fast unit test framework powered by Vite.',
-      icon: 'logos:vitest',
+      icon: 'i-logos-vitest',
     },
   ],
 }
@@ -62,10 +62,10 @@ const rankingUrl = computed(() => {
         :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
       >
         <div v-if="item.icon" class="pt-2 pr-5">
-          <Icon class="text-3xl opacity-50" :icon="item.icon || 'carbon:unknown'" />
+          <div class="text-4xl opacity-100" :class="item.icon || 'i-carbon-unknown'" />
         </div>
         <div class="flex-auto">
-          <div cla ss="text-normal">{{ item.name }}</div>
+          <div class="text-normal">{{ item.name }}</div>
           <div
             class="desc text-sm opacity-50 font-normal"
             v-html="item.desc"
@@ -78,19 +78,19 @@ const rankingUrl = computed(() => {
   <a :href="rankingUrl" target="_blank">All projects sorted by Stars</a>
 </template>
 
-<style lang="postcss">
+<style scoped>
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 
-  a.item {
-    padding: 0.8em 1em;
-    background: transparent;
-    font-size: 1.1rem;
+a.item {
+	padding: 0.8em 1em;
+	background: transparent;
+	font-size: 1.1rem;
+}
 
-    &:hover {
-      background: #88888808;
-    }
-  }
+a.item:hover {
+	background: #88888808;
 }
 </style>

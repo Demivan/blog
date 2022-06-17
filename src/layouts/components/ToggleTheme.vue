@@ -26,7 +26,7 @@ window.toggleDark = () => {
 
 <template>
   <button id="toggle-theme" onclick="toggleDark()">
-    <icon-ri-moon-line class="icon-moon hidden" aria-hidden="true" />
-    <icon-ri-sun-line class="icon-sun hidden" aria-hidden="true" />
+    <div class="i-ri-moon-line icon-moon hidden" aria-hidden="true" />
+    <div class="i-ri-sun-line icon-sun hidden" aria-hidden="true" />
   </button>
 </template>

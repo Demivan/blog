@@ -16,21 +16,21 @@ import ToggleTheme from './ToggleTheme.vue'
       <div class="spacer" />
       <div class="right">
         <a href="/posts" title="Blog">
-          <span class="<md:hidden">Blog</span>
-          <icon-ri-article-line class="md:hidden" />
+          <span class="lt-md:hidden">Blog</span>
+          <div class="i-ri-article-line md:hidden" />
         </a>
         <a href="/projects" title="Projects">
-          <span class="<md:hidden">Projects</span>
-          <icon-ri-lightbulb-line class="md:hidden" />
+          <span class="lt-md:hidden">Projects</span>
+          <div class="i-ri-lightbulb-line md:hidden" />
         </a>
         <a href="https://twitter.com/IvanDemchuk" rel="noopener" target="_blank" title="Twitter">
-          <icon-feather-twitter aria-hidden="true" />
+          <div class="i-feather-twitter" aria-hidden="true" />
         </a>
         <a href="https://github.com/demivan" rel="noopener" target="_blank" title="GitHub">
-          <icon-uil-github-alt aria-hidden="true" />
+          <div class="i-uil-github-alt" aria-hidden="true" />
         </a>
-        <a href="/feed.xml" target="_blank" title="RSS" class="<md:hidden">
-          <icon-la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" aria-hidden="true" />
+        <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
+          <div class="i-bi-rss" aria-hidden="true" />
         </a>
         <ToggleTheme />
       </div>
@@ -57,6 +57,10 @@ import ToggleTheme from './ToggleTheme.vue'
 
 .nav img {
   margin-bottom: 0;
+}
+
+.nav div[class^="i-"] {
+	font-size: 1.25rem;
 }
 
 .header a, .header button {

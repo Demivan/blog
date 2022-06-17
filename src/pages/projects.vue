@@ -21,7 +21,7 @@ const projects = {
       name: 'fluent.js',
       link: 'https://github.com/projectfluent/fluent.js',
       desc: 'JavaScript implementation of Project Fluent',
-	    icon: 'i-logos-fluent text-6xl'
+	    icon: 'i-logos-fluent text-6xl dark-invert'
     }, {
       name: 'vitest',
       link: 'https://github.com/vitest-dev/vitest',

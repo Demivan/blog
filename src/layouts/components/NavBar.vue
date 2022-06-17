@@ -10,7 +10,7 @@ import ToggleTheme from './ToggleTheme.vue'
       focusable="false"
       title="Go to frontpage"
     >
-      <svg width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="font-size:1.75em;" aria-hidden="true" data-v-01a370fe=""><g fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.698 2.799a2 2 0 0 1 2.604 0l6.336 5.43l2.487 1.99a1 1 0 1 1-1.25 1.562l-.875-.7V19a2 2 0 0 1-2 2h-4v-5a2 2 0 1 0-4 0v5H6a2 2 0 0 1-2-2v-7.92l-.875.7a1 1 0 1 1-1.25-1.56l2.487-1.99l6.336-5.431z" fill="currentColor"></path></g></svg>
+	    <div class="i-typcn:home text-4xl" aria-hidden="true"></div> 
     </a>
     <nav class="nav">
       <div class="spacer" />

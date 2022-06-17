@@ -10,7 +10,7 @@ Core team member of [Vitest](https://github.com/vitest-dev/vitest)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
 
  - 🔭 I'm currently working on Vue.js i18n plugin - `fluent-vue`  
-  GitHub: [fluent-vue](https://github.com/demivan/fluent-vue)  
+  GitHub: [fluent-vue](https://github.com/fluent-vue/fluent-vue)  
   Docs: [fluent-vue.demivan.me](https://fluent-vue.demivan.me)
  - 🌱 I'm currently learning Rust and Kubernetes
  - 💬 Ask me about Vue, C#, Linux and Cosmere <img src="https://user-images.githubusercontent.com/2339406/126692384-17784667-7b16-434e-8b54-48b5e5ec614e.png" width="20" height="20" valign="middle" alt="Cosmere icon" class="inline-image">

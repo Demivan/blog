@@ -7,3 +7,4 @@ dist-ssr
 .vite-ssg-temp
 components.d.ts
 .log
+.idea

@@ -4,6 +4,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "lib": ["DOM", "ESNext"],
+    "jsx": "preserve",
     "strict": true,
     "esModuleInterop": true,
     "incremental": true,
@@ -15,6 +16,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "src/.vitepress/**/*.vue", "src/.vitepress/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.vue", "windicss.config.ts", "composables.d.ts", "components.d.ts"],
   "exclude": ["dist", "node_modules"]
 }

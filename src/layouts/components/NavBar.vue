@@ -10,40 +10,35 @@ import ToggleTheme from './ToggleTheme.vue'
       focusable="false"
       title="Go to frontpage"
     >
-      <majesticons:home style="font-size: 1.75em;" aria-hidden="true" />
+      <div class="i-typcn:home text-4xl" aria-hidden="true" />
     </a>
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
         <a href="/posts" title="Blog">
-          <span class="<md:hidden">Blog</span>
-          <ri-article-line class="md:hidden" />
+          <span class="lt-md:hidden">Blog</span>
+          <div class="i-ri-article-line md:hidden" />
         </a>
         <a href="/projects" title="Projects">
-          <span class="<md:hidden">Projects</span>
-          <ri-lightbulb-line class="md:hidden" />
+          <span class="lt-md:hidden">Projects</span>
+          <div class="i-ri-lightbulb-line md:hidden" />
         </a>
-        <!--
-        <a href="/notes" title="Notes">
-          <ri-sticky-note-line />
-        </a>
-        -->
         <a href="https://twitter.com/IvanDemchuk" rel="noopener" target="_blank" title="Twitter">
-          <feather-twitter aria-hidden="true" />
+          <div class="i-feather-twitter" aria-hidden="true" />
         </a>
         <a href="https://github.com/demivan" rel="noopener" target="_blank" title="GitHub">
-          <uil-github-alt aria-hidden="true" />
+          <div class="i-uil-github-alt" aria-hidden="true" />
         </a>
-        <a href="/feed.xml" target="_blank" title="RSS" class="<md:hidden">
-          <la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" aria-hidden="true" />
+        <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
+          <div class="i-bi-rss" aria-hidden="true" />
         </a>
-        <toggle-theme />
+        <ToggleTheme />
       </div>
     </nav>
   </header>
 </template>
 
-<style scoped>
+<style>
 .header h1 {
   margin-bottom: 0;
 }
@@ -62,6 +57,10 @@ import ToggleTheme from './ToggleTheme.vue'
 
 .nav img {
   margin-bottom: 0;
+}
+
+.nav div[class^="i-"] {
+  font-size: 1.25rem;
 }
 
 .header a, .header button {

@@ -7,7 +7,7 @@ duration: 5min
 keywords: vue.js, vue, js, internationalization, vue i18n, localization
 ---
 
-After few months of frustration with trying to use the "de-facto" internationalization library for Vue.js - `vue-i18n`, I've decided it is time to replace it. And that is why I have created [fluent-vue](https://fluent-vue.demivan.me). I will write more about it and [Fluent syntax](https://projectfluent.org/) it uses in my following blog posts.
+After few months of frustration with trying to use the "de-facto" internationalization library for Vue.js - `vue-i18n`, I've decided it's time to replace it. And that's why I have created [fluent-vue](https://fluent-vue.demivan.me). I will write more about it and [Fluent syntax](https://projectfluent.org/) it uses in my following blog posts.
 
 In this blog post, I try to explain what problems I have encountered when trying to use the `vue-i18n` library in my app, and how fluent-vue and Fluent syntax solve them.
 
@@ -39,7 +39,8 @@ Grammar of source language limits what features translators can use and leaks in
 
 ***Example (pluralization):***
 
-If you want translators to be able to use pluralization, you need to use `$tc` method. Even if you don't need it for your source language. You cannot just write:
+If you want translators to be able to use pluralization, you need to use `$tc` method. Even if you don't need it for your source language. You can't just write:
+
 ```js
 const messages = {
   en: {
@@ -64,7 +65,7 @@ const messages = {
 }
 ```
 
-On top of that, if translator tries to use this syntax and developer did not use `$tc` method, it will not be pluralized and you will see both choice variants displayed in your app.
+On top of that, if translator tries to use this syntax and developer didn't use `$tc` method, it won't be pluralized and you will see both choice variants displayed in your app.
 
 ***fluent-vue solution:***
 
@@ -82,7 +83,7 @@ $t('copy-n-files', { count: 5 })
 This syntax can be used in any translation message to choose an option based on plural category, or even a concrete value.
 
 
-#### 3. Translators do not have control over translations
+#### 3. Translators don't have control over translations
 
 Developers are forced to make choices that translators should make: "should translation message be pluralized?", "what date and number format to use?".
 
@@ -113,11 +114,11 @@ const messages = {
 $t('last-online', { date: $d(new Date(), 'short') })
 ```
 
-Translators cannot change date formatting for a particular translation, for example, if it does not fit into UI in some language.
+Translators can't change date formatting for a particular translation, for example, if it doesn't fit into UI in some language.
 
 ***fluent-vue solution:***
 
-Fluent syntax allows translators to call custom function in translation messages. There is built in `DATETIME` function:
+Fluent syntax allows translators to call custom function in translation messages. For date internationalization fluent-vue has a built-in `DATETIME` function:
 
 ```ftl
 last-online = User was last online at { DATETIME($date, year: "numeric", month: "short", month: "short") }
@@ -127,9 +128,9 @@ last-online = User was last online at { DATETIME($date, year: "numeric", month: 
 $t('last-online', { date: new Date() })
 ```
 
-If you want to have predefined date formats it can easily be implemented using a custom function. But translators will still be able to choose what format to use in each case.
+If you want to have predefined date formats it can be implemented using a custom function. But translators will still be able to choose what format to use in each case.
 
-#### 4. Syntax is not powerful enough
+#### 4. Syntax isn't powerful enough
 
 Even with `$tc` method there is no way to have pluralization that depends on counts of 2 or more objects:
 
@@ -143,7 +144,7 @@ const messages = {
 }
 ```
 
-One possible solution for this issue is splitting translation into three different ones. But is does not look particularly good:
+One possible solution for this issue is splitting translation into three different ones. But is doesn't look particularly good:
 
 ```js
 $t('apples-and-bananas', {

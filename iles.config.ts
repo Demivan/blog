@@ -16,6 +16,8 @@ function visit(node: any, type: string, fn: (node: any) => void) {
 }
 
 export default defineConfig(async() => {
+  const markdownToc = await import('remark-toc').then(m => m.default)
+  
   const highlighter = await getHighlighter({
     themes: [
       'material-palenight',
@@ -54,6 +56,7 @@ export default defineConfig(async() => {
 
           return transformer
         },
+        markdownToc,
       ],
     },
     vite: {

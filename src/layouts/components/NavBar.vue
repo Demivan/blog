@@ -15,7 +15,7 @@ import ToggleTheme from './ToggleTheme.vue'
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <a href="/posts" title="Blog">
+        <a href="https://blog.demivan.me" title="Blog">
           <span class="lt-md:hidden">Blog</span>
           <div class="i-ri-article-line md:hidden" />
         </a>

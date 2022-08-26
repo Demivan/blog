@@ -4,3 +4,8 @@
 [build]
   publish = "dist"
   command = "npx pnpm i --store=node_modules/.pnpm-store && npm run build"
+
+[[redirects]]
+  from = "/posts/2021-08-08-vue-i18n-in-real-world-application"
+  to = "https://blog.demivan.me/difficulties-you-might-encounter-when-using-vue-i18n"
+  status = 301

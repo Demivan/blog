@@ -11,3 +11,8 @@
   status = 301
   force = true
  
+[[redirects]]
+  from = "/posts"
+  to = "https://blog.demivan.me"
+  status = 301
+  force = true

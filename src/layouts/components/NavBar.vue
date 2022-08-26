@@ -29,9 +29,6 @@ import ToggleTheme from './ToggleTheme.vue'
         <a href="https://github.com/demivan" rel="noopener" target="_blank" title="GitHub">
           <div class="i-uil-github-alt" aria-hidden="true" />
         </a>
-        <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
-          <div class="i-bi-rss" aria-hidden="true" />
-        </a>
         <ToggleTheme />
       </div>
     </nav>

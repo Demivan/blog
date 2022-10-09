@@ -1,11 +1,11 @@
-<page>
-title: Projects
-subtitle: List of projects I'm working on
-description: List of projects I'm working on
-</page>
-
 <script setup lang="ts">
 import { computed } from 'vue'
+
+definePageMeta({
+  title: 'Projects',
+  subtitle: 'List of projects I\'m working on',
+  description: 'List of projects I\'m working on'
+})
 
 const projects = {
   'Vue': [
@@ -49,34 +49,36 @@ const rankingUrl = computed(() => {
 </script>
 
 <template>
-  <template v-for="key in Object.keys(projects)" :key="key">
-    <h4 class="mt-10 font-bold">
-      {{ key }}
-    </h4>
-    <div class="project-grid py-2 -mx-3 gap-2">
-      <a
-        v-for="item, idx in projects[key]"
-        :key="idx"
-        class="item relative flex"
-        :href="item.link"
-        target="_blank"
-        :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
-      >
-        <div v-if="item.icon" class="pt-2 pr-5">
-          <div class="text-4xl" :class="item.icon || 'i-carbon-unknown'" />
-        </div>
-        <div class="flex-auto">
-          <div class="text-normal">{{ item.name }}</div>
-          <div
-            class="desc text-sm opacity-50 font-normal"
-            v-html="item.desc"
-          />
-        </div>
-      </a>
-    </div>
-  </template>
+  <Page>
+    <template v-for="key in Object.keys(projects)" :key="key">
+      <h4 class="mt-10 font-bold">
+        {{ key }}
+      </h4>
+      <div class="project-grid py-2 -mx-3 gap-2">
+        <a
+          v-for="item, idx in projects[key]"
+          :key="idx"
+          class="item relative flex"
+          :href="item.link"
+          target="_blank"
+          :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
+        >
+          <div v-if="item.icon" class="pt-2 pr-5">
+            <div class="text-4xl" :class="item.icon || 'i-carbon-unknown'" />
+          </div>
+          <div class="flex-auto">
+            <div class="text-normal">{{ item.name }}</div>
+            <div
+              class="desc text-sm opacity-50 font-normal"
+              v-html="item.desc"
+            />
+          </div>
+        </a>
+      </div>
+    </template>
 
-  <a :href="rankingUrl" target="_blank">All projects sorted by Stars</a>
+    <a :href="rankingUrl" target="_blank">All projects sorted by Stars</a>
+  </Page>
 </template>
 
 <style scoped>

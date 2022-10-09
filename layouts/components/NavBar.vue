@@ -4,31 +4,31 @@ import ToggleTheme from './ToggleTheme.vue'
 
 <template>
   <header class="header text-black dark:text-white">
-    <a
+    <NuxtLink
       class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
-      href="/"
+      to="/"
       focusable="false"
       title="Go to frontpage"
     >
       <div class="i-typcn:home text-4xl" aria-hidden="true" />
-    </a>
+    </NuxtLink>
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <a href="https://blog.demivan.me" title="Blog">
+        <NuxtLink to="/posts" title="Blog">
           <span class="lt-md:hidden">Blog</span>
           <div class="i-ri-article-line md:hidden" />
-        </a>
-        <a href="/projects" title="Projects">
+        </NuxtLink>
+        <NuxtLink to="/projects" title="Projects">
           <span class="lt-md:hidden">Projects</span>
           <div class="i-ri-lightbulb-line md:hidden" />
-        </a>
-        <a href="https://twitter.com/IvanDemchuk" rel="noopener" target="_blank" title="Twitter">
+        </NuxtLink>
+        <NuxtLink to="https://twitter.com/IvanDemchuk" title="Twitter">
           <div class="i-feather-twitter" aria-hidden="true" />
-        </a>
-        <a href="https://github.com/demivan" rel="noopener" target="_blank" title="GitHub">
+        </NuxtLink>
+        <NuxtLink to="https://github.com/demivan" title="GitHub">
           <div class="i-uil-github-alt" aria-hidden="true" />
-        </a>
+        </NuxtLink>
         <ToggleTheme />
       </div>
     </nav>

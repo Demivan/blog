@@ -7,12 +7,6 @@
 
 [[redirects]]
   from = "/posts/2021-08-08-vue-i18n-in-real-world-application"
-  to = "https://blog.demivan.me/difficulties-you-might-encounter-when-using-vue-i18n"
-  status = 301
-  force = true
- 
-[[redirects]]
-  from = "/posts"
-  to = "https://blog.demivan.me"
+  to = "/posts/vue-i18n-in-real-world-application"
   status = 301
   force = true

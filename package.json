@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
-    "generage": "nuxt generate",
+    "generate": "nuxt generate",
     "start": "nuxt start",
     "lint": "eslint src"
   },

@@ -7,6 +7,12 @@
 
 [[redirects]]
   from = "/posts/2021-08-08-vue-i18n-in-real-world-application"
-  to = "/posts/vue-i18n-in-real-world-application"
+  to = "/posts/vue-i18n-difficulties"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/posts/vue-i18n-in-real-world-application"
+  to = "/posts/vue-i18n-difficulties"
   status = 301
   force = true

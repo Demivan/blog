@@ -20,7 +20,7 @@ definePageMeta({
     <ul>
       <li>
         🔭 I'm currently working on Vue.js i18n plugin - <code>fluent-vue</code><br/>
-        GitHub: <a href="fluent-vue">https://github.com/fluent-vue/fluent-vue</a><br/>
+        GitHub: <a href="https://github.com/fluent-vue/fluent-vue">fluent-vue</a><br/>
         Docs: <a href="https://fluent-vue.demivan.me">fluent-vue.demivan.me</a><br/>
       </li>
       <li>

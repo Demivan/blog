@@ -23,10 +23,13 @@ import ToggleTheme from './ToggleTheme.vue'
           <span class="lt-md:hidden">Projects</span>
           <div class="i-ri-lightbulb-line md:hidden" />
         </NuxtLink>
-        <NuxtLink to="https://twitter.com/IvanDemchuk" title="Twitter">
+        <NuxtLink to="https://mastodon.social/@Demivan" rel="me" title="Mastodon">
+          <div class="i-ri-mastodon-line" aria-hidden="true" />
+        </NuxtLink>
+        <NuxtLink to="https://twitter.com/IvanDemchuk" rel="me" title="Twitter">
           <div class="i-feather-twitter" aria-hidden="true" />
         </NuxtLink>
-        <NuxtLink to="https://github.com/demivan" title="GitHub">
+        <NuxtLink to="https://github.com/demivan" rel="me" title="GitHub">
           <div class="i-uil-github-alt" aria-hidden="true" />
         </NuxtLink>
         <ToggleTheme />

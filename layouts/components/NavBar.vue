@@ -23,7 +23,7 @@ import ToggleTheme from './ToggleTheme.vue'
           <span class="lt-md:hidden">Projects</span>
           <div class="i-ri-lightbulb-line md:hidden" />
         </NuxtLink>
-        <NuxtLink to="https://mastodon.social/@Demivan" rel="me" target="_blank" title="Mastodon">
+        <NuxtLink to="https://fosstodon.org/@Demivan" rel="me" target="_blank" title="Mastodon">
           <div class="i-ri-mastodon-line" aria-hidden="true" />
         </NuxtLink>
         <NuxtLink to="https://twitter.com/IvanDemchuk" rel="me" target="_blank" title="Twitter">

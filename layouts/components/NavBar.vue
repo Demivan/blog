@@ -29,7 +29,7 @@ import ToggleTheme from './ToggleTheme.vue'
         <NuxtLink to="https://twitter.com/IvanDemchuk" rel="me" target="_blank" title="Twitter">
           <div class="i-feather-twitter" aria-hidden="true" />
         </NuxtLink>
-        <NuxtLink to="https://github.com/demivan" rel="me" "target"="_blank" title="GitHub">
+        <NuxtLink to="https://github.com/demivan" rel="me" target="_blank" title="GitHub">
           <div class="i-uil-github-alt" aria-hidden="true" />
         </NuxtLink>
         <ToggleTheme />

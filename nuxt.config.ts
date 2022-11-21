@@ -4,12 +4,16 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'netlify-edge'
   },
-  head: {
-    script: process.env.NODE_ENV === 'production'
-      ? [
-        { 'defer': 'defer', 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "ac0b1366d5e54c43a78cfc2c56070cab"}' },
+  app: {
+    head: {
+      script: [
+        { 'defer': true, 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "ac0b1366d5e54c43a78cfc2c56070cab"}' },
+      ],
+      link: [
+        { rel: 'webmention', href: 'https://webmention.io/demivan.me/webmention' },
+        { rel: 'pingback', href: 'https://webmention.io/demivan.me/xmlrpc' },
       ]
-      : [],
+    }
   },
   modules: [
     '@nuxt/content',

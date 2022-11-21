@@ -1,6 +1,9 @@
 ﻿import FluentGrammar from './fluent.tmLanguage.json'
 
 export default defineNuxtConfig({
+  nitro: {
+    preset: 'netlify-edge'
+  },
   head: {
     script: process.env.NODE_ENV === 'production'
       ? [

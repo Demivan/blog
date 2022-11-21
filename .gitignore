@@ -12,3 +12,4 @@ components.d.ts
 .vale.ini
 .nuxt
 .output
+.netlify

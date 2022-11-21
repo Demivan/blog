@@ -7,7 +7,7 @@ import '~/assets/styles/fonts.css'
 import '~/assets/styles/prose.css'
 import '~/assets/styles/markdown.css'
 
-const route = useActiveRoute()
+const route = useRoute()
 const meta = route.meta
 
 useHead({

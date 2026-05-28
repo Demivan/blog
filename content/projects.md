@@ -19,4 +19,4 @@ subtitle: List of projects I'm working on
   ::
 ::
 
-[All projects sorted by Stars](https://github.com/search?l=&o=desc&s=stars&type=Repositories&q=user%3Ademivan+repo%3Ademivan%2Ffluent-vue){target="_blank"}
+[All projects sorted by Stars](https://github.com/search?l=&o=desc&s=stars&type=Repositories&q=user:demivan+org:fluent-vue){target="_blank"}

@@ -60,5 +60,10 @@ export default defineNuxtConfig({
     ],
   },
 
+  routeRules: {
+    '/posts/2021-08-08-vue-i18n-in-real-world-application': { redirect: { to: '/posts/vue-i18n-difficulties', statusCode: 301 } },
+    '/posts/vue-i18n-in-real-world-application': { redirect: { to: '/posts/vue-i18n-difficulties', statusCode: 301 } },
+  },
+
   compatibilityDate: '2026-03-15',
 })

@@ -8,16 +8,10 @@ useHead({
 </script>
 
 <template>
-  <main class="px-7 py-10">
-    <div class="prose prose-lg m-auto mb-8">
-      <h1 class="mb-0 text-4xl font-extrabold">
-        {{ page?.title }}
-      </h1>
-    </div>
+  <UContainer>
+    <UPageHeader :title="page?.title" />
     <article>
-      <div class="prose prose-lg mx-auto">
-        <ContentRenderer v-if="page" :value="page" />
-      </div>
+      <ContentRenderer v-if="page" :value="page" />
     </article>
-  </main>
+  </UContainer>
 </template>

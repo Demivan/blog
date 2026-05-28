@@ -25,34 +25,36 @@ function formatDate(date: string) {
     day: 'numeric',
   })
 }
+
+const description = computed(() => {
+  const parts: string[] = []
+  if (page.value.date)
+    parts.push(formatDate(page.value.date))
+  if (page.value.duration)
+    parts.push(page.value.duration)
+  if (page.value.subtitle)
+    return page.value.subtitle
+  return parts.join(' · ') || undefined
+})
 </script>
 
 <template>
-  <main class="px-7 py-10">
-    <div v-if="page.display ?? page.title" class="prose prose-lg m-auto mb-8">
-      <h1 class="mb-0 text-4xl font-extrabold">
-        {{ page.display ?? page.title }}
-      </h1>
-      <p v-if="page.date" class="opacity-50 mt-2">
-        {{ formatDate(page.date) }} <span v-if="page.duration">· {{ page.duration }}</span>
-      </p>
-      <p v-if="page.subtitle" class="opacity-50 mt-1 italic">
-        {{ page.subtitle }}
-      </p>
-    </div>
+  <UContainer>
+    <UPageHeader
+      v-if="page.display ?? page.title"
+      :title="page.display ?? page.title"
+      :description="description"
+    />
     <article>
-      <div class="prose prose-lg mx-auto">
-        <slot />
-      </div>
+      <slot />
     </article>
-
-    <div v-if="route.path !== '/' && route.path !== '/index.html'" class="prose prose-lg m-auto mt-8 mb-8">
+    <div v-if="route.path !== '/' && route.path !== '/index.html'" class="mt-8 mb-8">
       <NuxtLink
         :to="route.path.split('/').slice(0, -1).join('/') || '/'"
-        class="font-mono no-underline opacity-50 hover:opacity-75"
+        class="font-mono no-underline text-muted hover:text-default"
       >
         cd ..
       </NuxtLink>
     </div>
-  </main>
+  </UContainer>
 </template>

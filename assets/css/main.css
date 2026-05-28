@@ -5,6 +5,8 @@
 :root {
   --c-scrollbar: #eee;
   --c-scrollbar-hover: #bbb;
+
+  --ui-container: 60rem;
 }
 
 .dark {

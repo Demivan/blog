@@ -1,6 +1,6 @@
 <script setup lang="ts">
-interface Meta {
-  title: string
+interface PageMeta {
+  title?: string
   display?: string
   date?: string
   duration?: string
@@ -8,21 +8,18 @@ interface Meta {
 }
 
 const props = defineProps<{
-  meta?: Meta
+  meta?: PageMeta
 }>()
 
 const route = useRoute()
-const page = computed(() => props.meta ?? route.meta)
+const page = computed(() => ({ ...route.meta, ...props.meta }) as PageMeta)
 
 useHead(() => ({
   title: page.value.display ?? `${page.value.title} · Ivan Demchuk `,
 }))
 
-function formatDate(date: number | string | Date) {
-  if (!(date instanceof Date))
-    date = new Date(date)
-
-  return date.toLocaleDateString('en-US', {
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

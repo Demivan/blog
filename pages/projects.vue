@@ -5,7 +5,15 @@ definePageMeta({
   description: 'List of projects I\'m working on',
 })
 
-const projects = {
+interface Project {
+  name: string
+  link: string
+  desc: string
+  icon: string
+  iconClass?: string
+}
+
+const projects: Record<string, Project[]> = {
   'Vue': [
     {
       name: 'fluent-vue',
@@ -50,13 +58,13 @@ const rankingUrl = computed(() => {
 
 <template>
   <Page>
-    <template v-for="key in Object.keys(projects)" :key="key">
+    <template v-for="(items, key) in projects" :key="key">
       <h4 class="mt-10 font-bold">
         {{ key }}
       </h4>
       <div class="project-grid py-2 -mx-3 gap-2">
         <a
-          v-for="(item, idx) in projects[key]"
+          v-for="(item, idx) in items"
           :key="idx"
           class="item relative flex"
           :href="item.link"

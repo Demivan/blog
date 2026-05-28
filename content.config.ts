@@ -1,5 +1,5 @@
 import { defineCollection, defineContentConfig } from '@nuxt/content'
-import { z } from 'zod'
+import { array, object, optional, string } from 'valibot'
 
 export default defineContentConfig({
   collections: {
@@ -10,13 +10,13 @@ export default defineContentConfig({
     posts: defineCollection({
       type: 'page',
       source: 'posts/*.md',
-      schema: z.object({
-        title: z.string(),
-        description: z.string().optional(),
-        date: z.string(),
-        lang: z.string().optional(),
-        duration: z.string().optional(),
-        keywords: z.array(z.string()).optional(),
+      schema: object({
+        title: string(),
+        description: optional(string()),
+        date: string(),
+        lang: optional(string()),
+        duration: optional(string()),
+        keywords: optional(array(string())),
       }),
     }),
   },

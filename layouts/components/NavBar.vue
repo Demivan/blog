@@ -20,7 +20,6 @@ import ToggleTheme from './ToggleTheme.vue'
         <UButton to="/projects" label="Projects" color="neutral" variant="ghost" class="hidden md:inline-flex" />
         <UButton to="/projects" icon="i-ri-lightbulb-line" color="neutral" variant="ghost" class="md:hidden" aria-label="Projects" />
         <UButton to="https://fosstodon.org/@Demivan" icon="i-ri-mastodon-line" color="neutral" variant="ghost" target="_blank" rel="me" aria-label="Mastodon" />
-        <UButton to="https://twitter.com/IvanDemchuk" icon="i-feather-twitter" color="neutral" variant="ghost" target="_blank" rel="me" aria-label="Twitter" />
         <UButton to="https://github.com/demivan" icon="i-uil-github-alt" color="neutral" variant="ghost" target="_blank" rel="me" aria-label="GitHub" />
         <ToggleTheme />
       </div>

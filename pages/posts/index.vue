@@ -1,10 +1,8 @@
 <script setup lang="ts">
-definePageMeta({
-  title: 'Blog',
-})
-
 const { data: posts } = await useAsyncData('posts', () =>
   queryCollection('posts').order('date', 'DESC').all())
+
+useHead({ title: 'Blog · Ivan Demchuk' })
 
 function formatDate(date: number | string | Date) {
   if (!(date instanceof Date))
@@ -20,21 +18,25 @@ function formatDate(date: number | string | Date) {
 </script>
 
 <template>
-  <Page>
-    <div class="not-prose">
-      <NuxtLink
-        v-for="post in posts"
-        :key="post.path"
-        class="block mb-6 mt-2 opacity-60 hover:opacity-100 transition-opacity"
-        :to="post.path"
-      >
-        <div class="text-lg">
-          {{ post.title }}
-        </div>
-        <div class="opacity-50 text-sm -mt-1">
-          {{ formatDate(post.date) }} <span v-if="post.duration" class="opacity-50">· {{ post.duration }}</span>
-        </div>
+  <div>
+    <UPageHeader title="Blog" />
+    <NuxtLink
+      v-for="post in posts"
+      :key="post.path"
+      class="block mb-6 mt-2 opacity-60 hover:opacity-100 transition-opacity"
+      :to="post.path"
+    >
+      <div class="text-lg">
+        {{ post.title }}
+      </div>
+      <div class="opacity-50 text-sm -mt-1">
+        {{ formatDate(post.date) }} <span v-if="post.duration" class="opacity-50">· {{ post.duration }}</span>
+      </div>
+    </NuxtLink>
+    <div class="mt-8 mb-8">
+      <NuxtLink to="/" class="font-mono no-underline text-muted hover:text-default">
+        cd ..
       </NuxtLink>
     </div>
-  </Page>
+  </div>
 </template>

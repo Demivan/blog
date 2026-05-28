@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
 
 const items: NavigationMenuItem[] = [
@@ -33,7 +33,7 @@ const items: NavigationMenuItem[] = [
     <UFooter>
       <template #left>
         <span class="text-sm text-muted">
-          <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> {{ new Date().getFullYear() }} © Ivan Demchuk
+          <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 2021 © Ivan Demchuk
         </span>
       </template>
     </UFooter>

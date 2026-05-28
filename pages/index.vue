@@ -2,16 +2,12 @@
 const { data: page } = await useAsyncData('index', () =>
   queryCollection('content').path('/').first())
 
-useHead({
-  title: 'Ivan Demchuk',
-})
+useHead({ title: 'Ivan Demchuk' })
 </script>
 
 <template>
-  <UContainer>
+  <div>
     <UPageHeader :title="page?.title" />
-    <article>
-      <ContentRenderer v-if="page" :value="page" />
-    </article>
-  </UContainer>
+    <ContentRenderer v-if="page" :value="page" />
+  </div>
 </template>

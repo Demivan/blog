@@ -15,23 +15,13 @@ import ToggleTheme from './ToggleTheme.vue'
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <NuxtLink to="/posts" title="Blog">
-          <span class="hidden md:inline">Blog</span>
-          <UIcon name="i-ri-article-line" class="md:hidden" />
-        </NuxtLink>
-        <NuxtLink to="/projects" title="Projects">
-          <span class="hidden md:inline">Projects</span>
-          <UIcon name="i-ri-lightbulb-line" class="md:hidden" />
-        </NuxtLink>
-        <NuxtLink to="https://fosstodon.org/@Demivan" rel="me" target="_blank" title="Mastodon">
-          <UIcon name="i-ri-mastodon-line" aria-hidden="true" />
-        </NuxtLink>
-        <NuxtLink to="https://twitter.com/IvanDemchuk" rel="me" target="_blank" title="Twitter">
-          <UIcon name="i-feather-twitter" aria-hidden="true" />
-        </NuxtLink>
-        <NuxtLink to="https://github.com/demivan" rel="me" target="_blank" title="GitHub">
-          <UIcon name="i-uil-github-alt" aria-hidden="true" />
-        </NuxtLink>
+        <UButton to="/posts" label="Blog" color="neutral" variant="ghost" class="hidden md:inline-flex" />
+        <UButton to="/posts" icon="i-ri-article-line" color="neutral" variant="ghost" class="md:hidden" aria-label="Blog" />
+        <UButton to="/projects" label="Projects" color="neutral" variant="ghost" class="hidden md:inline-flex" />
+        <UButton to="/projects" icon="i-ri-lightbulb-line" color="neutral" variant="ghost" class="md:hidden" aria-label="Projects" />
+        <UButton to="https://fosstodon.org/@Demivan" icon="i-ri-mastodon-line" color="neutral" variant="ghost" target="_blank" rel="me" aria-label="Mastodon" />
+        <UButton to="https://twitter.com/IvanDemchuk" icon="i-feather-twitter" color="neutral" variant="ghost" target="_blank" rel="me" aria-label="Twitter" />
+        <UButton to="https://github.com/demivan" icon="i-uil-github-alt" color="neutral" variant="ghost" target="_blank" rel="me" aria-label="GitHub" />
         <ToggleTheme />
       </div>
     </nav>
@@ -55,31 +45,9 @@ import ToggleTheme from './ToggleTheme.vue'
   margin: auto;
 }
 
-.nav img {
-  margin-bottom: 0;
-}
-
-.header a, .header button {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.2s ease;
-  opacity: 0.5;
-  outline: none;
-}
-
-.header a:hover, .header a:focus, .header button:hover, .header button:focus {
-  opacity: 1;
-  text-decoration-color: inherit;
-}
-
 .nav .right {
-  display: grid;
-  grid-gap: 1.2rem;
-  grid-auto-flow: column;
-}
-
-.nav .right > * {
-  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 </style>

@@ -1,3 +1,3 @@
 <template>
-  <ColorModeButton color="neutral" variant="ghost" />
+  <UColorModeButton color="neutral" variant="ghost" />
 </template>

@@ -48,7 +48,7 @@ definePageMeta({
     <div class="flex flex-wrap gap-1">
       <Badge title="C#" icon="i-simple-icons-csharp" />
       <Badge title="ASP.NET Core" icon="i-simple-icons-dotnet" />
-      <Badge title="Vue.js" icon="i-simple-icons-vuejs" />
+      <Badge title="Vue.js" icon="i-simple-icons-vuedotjs" />
       <Badge title="TypeScript" icon="i-simple-icons-typescript" />
       <Badge title="JavaScript" icon="i-simple-icons-javascript" />
     </div>

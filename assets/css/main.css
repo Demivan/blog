@@ -51,6 +51,23 @@ h2 + p > em:first-child {
   font-size: 0.9em;
 }
 
+/* Prose text colors */
+.prose {
+  --tw-prose-body: #555;
+  --tw-prose-headings: #222;
+  --tw-prose-links: #222;
+  --tw-prose-bold: #222;
+  --tw-prose-code: #222;
+}
+
+.dark .prose {
+  --tw-prose-body: #bbb;
+  --tw-prose-headings: #fff;
+  --tw-prose-links: #ddd;
+  --tw-prose-bold: #ddd;
+  --tw-prose-code: #ddd;
+}
+
 /* Markdown overrides */
 .prose a {
   font-weight: inherit;
@@ -61,6 +78,15 @@ h2 + p > em:first-child {
 
 .prose a:hover {
   border-bottom: 1px solid currentColor;
+}
+
+/* Restore list styling */
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
 }
 
 .prose hr {

@@ -1,14 +1,12 @@
 <script setup lang="ts">
-const { page } = useContent()
+const route = useRoute()
+const { data: page } = await useAsyncData(route.path, () =>
+  queryCollection('posts').path(route.path).first(),
+)
 </script>
 
 <template>
   <Page :meta="page">
-    <ContentRenderer v-if="page" :key="page._id" :value="page">
-      <template #empty="{ value }">
-        <DocumentDrivenEmpty :value="value" />
-      </template>
-    </ContentRenderer>
-    <DocumentDrivenNotFound v-else />
+    <ContentRenderer v-if="page" :value="page" />
   </Page>
 </template>

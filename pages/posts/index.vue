@@ -3,7 +3,9 @@ definePageMeta({
   title: 'Blog',
 })
 
-const posts = await queryContent('/posts').find()
+const { data: posts } = await useAsyncData('posts', () =>
+  queryCollection('posts').order('date', 'DESC').all(),
+)
 
 function formatDate(date: number | string | Date) {
   if (!(date instanceof Date))
@@ -23,9 +25,9 @@ function formatDate(date: number | string | Date) {
     <ul>
       <NuxtLink
         v-for="post in posts"
-        :key="post._id"
+        :key="post.path"
         class="item block font-normal mb-6 mt-2 no-underline"
-        :to="post._path"
+        :to="post.path"
       >
         <li class="no-underline">
           <div class="title text-lg">

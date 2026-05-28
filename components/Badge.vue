@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 defineProps({
   title: { type: String, required: true },
   icon: { type: String, required: true },
@@ -9,7 +9,7 @@ defineProps({
 <template>
   <div class="badge font-mono">
     <div class="title">
-      <div class="icon" :class="icon" />
+      <UIcon :name="icon" class="mr-1" />
       {{ title }}
     </div>
     <div v-if="subtitle" class="subtitle">
@@ -31,10 +31,6 @@ defineProps({
     align-items: center;
     background-color: #273849;
     padding: 0 0.5em;
-  }
-
-  .icon {
-    margin-right: 0.25em;
   }
 
   .subtitle {

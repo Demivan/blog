@@ -1,12 +1,4 @@
-﻿<script setup>
-import '@unocss/reset/tailwind.css'
-import 'uno.css'
-
-import '~/assets/styles/main.css'
-import '~/assets/styles/fonts.css'
-import '~/assets/styles/prose.css'
-import '~/assets/styles/markdown.css'
-
+<script setup>
 const route = useRoute()
 const meta = route.meta
 

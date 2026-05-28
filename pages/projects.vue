@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
 definePageMeta({
   title: 'Projects',
   subtitle: 'List of projects I\'m working on',
-  description: 'List of projects I\'m working on'
+  description: 'List of projects I\'m working on',
 })
 
 const projects = {
@@ -13,7 +11,7 @@ const projects = {
       name: 'fluent-vue',
       link: 'https://github.com/fluent-vue/fluent-vue',
       desc: 'Internationalization plugin for Vue 2 and 3. Vue.js integration of fluent.js',
-      icon: 'i-logos-fluent-vue',
+      icon: 'custom-fluent-vue',
     },
   ],
   'Contributing to': [
@@ -21,7 +19,8 @@ const projects = {
       name: 'fluent.js',
       link: 'https://github.com/projectfluent/fluent.js',
       desc: 'JavaScript implementation of Project Fluent',
-      icon: 'i-logos-fluent text-6xl dark-invert',
+      icon: 'custom-fluent',
+      iconClass: 'text-6xl dark-invert',
     }, {
       name: 'vitest',
       link: 'https://github.com/vitest-dev/vitest',
@@ -56,7 +55,7 @@ const rankingUrl = computed(() => {
       </h4>
       <div class="project-grid py-2 -mx-3 gap-2">
         <a
-          v-for="item, idx in projects[key]"
+          v-for="(item, idx) in projects[key]"
           :key="idx"
           class="item relative flex"
           :href="item.link"
@@ -64,10 +63,12 @@ const rankingUrl = computed(() => {
           :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
         >
           <div v-if="item.icon" class="pt-2 pr-5">
-            <div class="text-4xl" :class="item.icon || 'i-carbon-unknown'" />
+            <UIcon :name="item.icon" class="text-4xl" :class="item.iconClass" />
           </div>
           <div class="flex-auto">
-            <div class="text-normal">{{ item.name }}</div>
+            <div class="text-normal">
+              {{ item.name }}
+            </div>
             <div
               class="desc text-sm opacity-50 font-normal"
               v-html="item.desc"

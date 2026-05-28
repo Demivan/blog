@@ -10,27 +10,27 @@ import ToggleTheme from './ToggleTheme.vue'
       focusable="false"
       title="Go to frontpage"
     >
-      <div class="i-typcn:home text-4xl" aria-hidden="true" />
+      <UIcon name="i-typcn-home" class="text-4xl" aria-hidden="true" />
     </NuxtLink>
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
         <NuxtLink to="/posts" title="Blog">
-          <span class="lt-md:hidden">Blog</span>
-          <div class="i-ri-article-line md:hidden" />
+          <span class="hidden md:inline">Blog</span>
+          <UIcon name="i-ri-article-line" class="md:hidden" />
         </NuxtLink>
         <NuxtLink to="/projects" title="Projects">
-          <span class="lt-md:hidden">Projects</span>
-          <div class="i-ri-lightbulb-line md:hidden" />
+          <span class="hidden md:inline">Projects</span>
+          <UIcon name="i-ri-lightbulb-line" class="md:hidden" />
         </NuxtLink>
         <NuxtLink to="https://fosstodon.org/@Demivan" rel="me" target="_blank" title="Mastodon">
-          <div class="i-ri-mastodon-line" aria-hidden="true" />
+          <UIcon name="i-ri-mastodon-line" aria-hidden="true" />
         </NuxtLink>
         <NuxtLink to="https://twitter.com/IvanDemchuk" rel="me" target="_blank" title="Twitter">
-          <div class="i-feather-twitter" aria-hidden="true" />
+          <UIcon name="i-feather-twitter" aria-hidden="true" />
         </NuxtLink>
         <NuxtLink to="https://github.com/demivan" rel="me" target="_blank" title="GitHub">
-          <div class="i-uil-github-alt" aria-hidden="true" />
+          <UIcon name="i-uil-github-alt" aria-hidden="true" />
         </NuxtLink>
         <ToggleTheme />
       </div>
@@ -57,10 +57,6 @@ import ToggleTheme from './ToggleTheme.vue'
 
 .nav img {
   margin-bottom: 0;
-}
-
-.nav div[class^="i-"] {
-  font-size: 1.25rem;
 }
 
 .header a, .header button {

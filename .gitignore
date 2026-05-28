@@ -13,3 +13,4 @@ components.d.ts
 .nuxt
 .output
 .netlify
+.data

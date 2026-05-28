@@ -21,7 +21,8 @@ const projects = {
       desc: 'JavaScript implementation of Project Fluent',
       icon: 'custom-fluent',
       iconClass: 'dark-invert',
-    }, {
+    },
+    {
       name: 'vitest',
       link: 'https://github.com/vitest-dev/vitest',
       desc: 'A blazing fast unit test framework powered by Vite.',

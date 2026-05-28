@@ -4,8 +4,7 @@ definePageMeta({
 })
 
 const { data: posts } = await useAsyncData('posts', () =>
-  queryCollection('posts').order('date', 'DESC').all(),
-)
+  queryCollection('posts').order('date', 'DESC').all())
 
 function formatDate(date: number | string | Date) {
   if (!(date instanceof Date))

@@ -65,5 +65,9 @@ export default defineNuxtConfig({
     '/posts/vue-i18n-in-real-world-application': { redirect: { to: '/posts/vue-i18n-difficulties', statusCode: 301 } },
   },
 
+  nitro: {
+    preset: 'cloudflare-pages-static',
+  },
+
   compatibilityDate: '2026-03-15',
 })

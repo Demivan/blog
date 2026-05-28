@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal blog (demivan.me) built with Nuxt 4, Nuxt UI v3, Nuxt Content v3, and Tailwind CSS v4. Deployed as a static site to Netlify.
+Personal blog (demivan.me) built with Nuxt 4, Nuxt UI v3, Nuxt Content v3, and Tailwind CSS v4. Deployed as a static site to Cloudflare Pages via Nitro's `cloudflare-pages-static` preset (build output: `dist/`).
 
 ## Commands
 
@@ -28,6 +28,8 @@ Personal blog (demivan.me) built with Nuxt 4, Nuxt UI v3, Nuxt Content v3, and T
 **Fonts**: `@nuxt/fonts` with Google provider for Inter and Fira Code.
 
 **Custom syntax highlighting**: `fluent.tmLanguage.json` provides TextMate grammar for Fluent i18n syntax, registered in nuxt.config.ts under `content.build.markdown.highlight.langs`.
+
+**Redirects**: Defined in `nuxt.config.ts` under `routeRules` (not a hand-written `_redirects` file). Nitro's Cloudflare Pages preset generates `dist/_redirects` at build time. Note: the status-code key is `statusCode`, not `status` — Nuxt's upgrade-guide rename hasn't landed in Nitro 2.x yet, so `status` is silently ignored.
 
 ## Conventions
 

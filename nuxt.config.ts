@@ -34,6 +34,7 @@ export default defineNuxtConfig({
             dark: 'material-theme-palenight',
           },
           langs: [
+            'js',
             JSON.parse(
               readFileSync('./fluent.tmLanguage.json', 'utf-8'),
             ),

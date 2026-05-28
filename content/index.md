@@ -5,14 +5,13 @@ title: Ivan Demchuk
 Hi 👋, I'm Ivan Demchuk. I'm Tech Lead, Full-Stack Developer working in Lviv, Ukraine.
 
 Creator of [fluent-vue](https://github.com/demivan/fluent-vue)
-Core team member of [Vitest](https://github.com/vitest-dev/vitest)
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
 
 - 🔭 I'm currently working on Vue.js i18n plugin - `fluent-vue`
   GitHub: [fluent-vue](https://github.com/fluent-vue/fluent-vue)
   Docs: [fluent-vue.demivan.me](https://fluent-vue.demivan.me)
-- 🌱 I'm currently learning Nuxt 3
+- 🌱 I'm currently learning Kubernetes
 - 💬 Ask me about Vue, C#, Linux and Cosmere :u-icon{name="custom-cosmere" class="dark-invert inline-block align-middle text-2xl"}
 - 📫 How to reach me: [ivan.demchuk@gmail.com](mailto:ivan.demchuk@gmail.com)
 

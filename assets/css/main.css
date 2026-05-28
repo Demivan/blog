@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Scrollbar styling */
+:root {
+  --c-scrollbar: #eee;
+  --c-scrollbar-hover: #bbb;
+}
+
+.dark {
+  --c-scrollbar: #111;
+  --c-scrollbar-hover: #222;
+}
+
+html {
+  overflow: scroll;
+}
+
+* {
+  scrollbar-color: var(--c-scrollbar) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  background: transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-scrollbar);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-scrollbar-hover);
+}
+
+/* Dark mode invert helper */
+.dark .dark-invert {
+  filter: invert(100%);
+}
+
+/* Subtitle styling for blog posts */
+h2 + p > em:first-child {
+  opacity: 0.5;
+  display: block;
+  margin-top: -20px;
+  font-size: 0.9em;
+}
+
+/* Markdown overrides */
+.prose a {
+  font-weight: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(125, 125, 125, 0.3);
+  transition: border 0.3s ease-in-out;
+}
+
+.prose a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.prose hr {
+  width: 50px;
+  margin: 2em auto;
+}
+
+.prose blockquote {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5em;
+  padding: 0.6em 1.2em;
+  opacity: 0.8;
+}
+
+.prose blockquote > :first-child {
+  margin-top: 0;
+}
+
+.prose blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+a.item {
+  transition: 0.2s all ease-out;
+  text-decoration: none;
+  border-bottom: none !important;
+  opacity: 0.6;
+}
+
+a.item:hover {
+  opacity: 1;
+}
+
+a.header-anchor {
+  text-decoration: none;
+  border: 0 !important;
+}
+
+a.header-anchor::before {
+  content: '#';
+  position: absolute;
+  opacity: 0;
+  left: -1.1em;
+  padding-right: 1.1em;
+}
+
+h1:hover .header-anchor::before,
+h1:focus .header-anchor::before,
+h2:hover .header-anchor::before,
+h2:focus .header-anchor::before,
+h3:hover .header-anchor::before,
+h3:focus .header-anchor::before,
+h4:hover .header-anchor::before,
+h4:focus .header-anchor::before,
+h5:hover .header-anchor::before,
+h5:focus .header-anchor::before,
+h6:hover .header-anchor::before,
+h6:focus .header-anchor::before {
+  opacity: 0.5;
+}
+
+@media (max-width: 1200px) {
+  .table-of-contents {
+    display: none;
+  }
+}
+
+.table-of-contents {
+  position: fixed;
+  top: 80px;
+  padding-top: 70px;
+  font-size: 0.8em;
+  right: 10px;
+  width: 200px;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: all .4s ease-out;
+}
+
+.table-of-contents:hover {
+  opacity: 0.5;
+}
+
+/* Code block font */
+.shiki {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}

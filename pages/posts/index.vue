@@ -33,10 +33,5 @@ function formatDate(date: number | string | Date) {
         {{ formatDate(post.date) }} <span v-if="post.duration" class="opacity-50">· {{ post.duration }}</span>
       </div>
     </NuxtLink>
-    <div class="mt-8 mb-8">
-      <NuxtLink to="/" class="font-mono no-underline text-muted hover:text-default">
-        cd ..
-      </NuxtLink>
-    </div>
   </div>
 </template>

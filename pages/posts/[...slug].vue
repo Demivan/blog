@@ -30,10 +30,5 @@ const description = computed(() => {
       :description="description"
     />
     <ContentRenderer v-if="page" :value="page" />
-    <div class="mt-8 mb-8">
-      <NuxtLink to="/posts" class="font-mono no-underline text-muted hover:text-default">
-        cd ..
-      </NuxtLink>
-    </div>
   </div>
 </template>

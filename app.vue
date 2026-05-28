@@ -27,7 +27,9 @@ const items: NavigationMenuItem[] = [
 
     <UMain>
       <NuxtLoadingIndicator />
-      <NuxtPage />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
     </UMain>
 
     <UFooter>
